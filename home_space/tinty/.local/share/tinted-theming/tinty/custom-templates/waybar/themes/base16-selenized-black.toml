@@ -1,0 +1,10 @@
+/* base16 selenized-black 256 - alacritty color config
+ * Jan Warchol (https://github.com/jan-warchol/selenized) / adapted to base16 by ali
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #181818;
+@define-color foreground #b9b9b9;
+@define-color accent #b9b9b9;

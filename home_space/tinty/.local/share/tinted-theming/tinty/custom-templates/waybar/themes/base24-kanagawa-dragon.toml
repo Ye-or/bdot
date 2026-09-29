@@ -1,0 +1,10 @@
+/* base24 Kanagawa Dragon 256 - alacritty color config
+ * Stefan Weigl-Bosker (https://github.com/sweiglbosker), Tommaso Laurenzi (https://github.com/rebelot/kanagawa.nvim)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #181616;
+@define-color foreground #c5c9c5;
+@define-color accent #c5c9c5;

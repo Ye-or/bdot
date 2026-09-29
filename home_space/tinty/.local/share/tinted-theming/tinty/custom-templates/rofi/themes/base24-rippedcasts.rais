@@ -1,0 +1,37 @@
+/**
+ * Base16 Rippedcasts ROFI Color theme
+ *
+ * Authors
+ *  Scheme: FredHappyface (https://github.com/fredHappyface)
+ *  Template: Tinted Theming (https://github.com/tinted-theming)
+ */
+
+* {
+    red:                         rgba ( 205, 175, 149, 100 % );
+    blue:                        rgba ( 117, 165, 176, 100 % );
+    lightfg:                     rgba ( 191, 191, 191, 100 % );
+    lightbg:                     rgba ( 0, 0, 0, 100 % );
+    foreground:                  rgba ( 168, 168, 168, 100 % );
+    background:                  rgba ( 43, 43, 43, 100 % );
+    background-color:            rgba ( 43, 43, 43, 0 % );
+    separatorcolor:              @foreground;
+    border-color:                @foreground;
+    selected-normal-foreground:  @lightbg;
+    selected-normal-background:  @lightfg;
+    selected-active-foreground:  @background;
+    selected-active-background:  @blue;
+    selected-urgent-foreground:  @background;
+    selected-urgent-background:  @red;
+    normal-foreground:           @foreground;
+    normal-background:           @background;
+    active-foreground:           @blue;
+    active-background:           @background;
+    urgent-foreground:           @red;
+    urgent-background:           @background;
+    alternate-normal-foreground: @foreground;
+    alternate-normal-background: @lightbg;
+    alternate-active-foreground: @blue;
+    alternate-active-background: @lightbg;
+    alternate-urgent-foreground: @red;
+    alternate-urgent-background: @lightbg;
+}

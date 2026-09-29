@@ -1,0 +1,37 @@
+/**
+ * Base16 Grape ROFI Color theme
+ *
+ * Authors
+ *  Scheme: FredHappyface (https://github.com/fredHappyface)
+ *  Template: Tinted Theming (https://github.com/tinted-theming)
+ */
+
+* {
+    red:                         rgba ( 236, 33, 96, 100 % );
+    blue:                        rgba ( 72, 124, 244, 100 % );
+    lightfg:                     rgba ( 158, 158, 160, 100 % );
+    lightbg:                     rgba ( 45, 40, 62, 100 % );
+    foreground:                  rgba ( 140, 138, 146, 100 % );
+    background:                  rgba ( 22, 20, 35, 100 % );
+    background-color:            rgba ( 22, 20, 35, 0 % );
+    separatorcolor:              @foreground;
+    border-color:                @foreground;
+    selected-normal-foreground:  @lightbg;
+    selected-normal-background:  @lightfg;
+    selected-active-foreground:  @background;
+    selected-active-background:  @blue;
+    selected-urgent-foreground:  @background;
+    selected-urgent-background:  @red;
+    normal-foreground:           @foreground;
+    normal-background:           @background;
+    active-foreground:           @blue;
+    active-background:           @background;
+    urgent-foreground:           @red;
+    urgent-background:           @background;
+    alternate-normal-foreground: @foreground;
+    alternate-normal-background: @lightbg;
+    alternate-active-foreground: @blue;
+    alternate-active-background: @lightbg;
+    alternate-urgent-foreground: @red;
+    alternate-urgent-background: @lightbg;
+}

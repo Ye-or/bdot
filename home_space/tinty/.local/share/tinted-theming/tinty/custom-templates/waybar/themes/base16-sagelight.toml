@@ -1,0 +1,10 @@
+/* base16 Sagelight 256 - alacritty color config
+ * Carter Veldhuizen
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #f8f8f8;
+@define-color foreground #383838;
+@define-color accent #383838;

@@ -1,0 +1,63 @@
+// -*- mode: jsonc -*-
+[
+  {
+    "include": [
+      "~/.config/waybar/modules.json"
+    ],
+    // "layer": "top", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 10, // Waybar height ()
+    //"width": 1600, // Waybar width
+    "spacing": 0, // Gaps between modules (4px)
+    "margin-top": 5,
+    "output": "eDP-1",
+    "modules-left": [
+      "pulseaudio",
+      //"pulseaudio/slider",
+      //"custom/cmus",
+      "backlight"
+      //"backlight/slider"
+    ],
+    "modules-center": [
+      "custom/menu",
+      "niri/workspaces",
+      "niri/submap"
+      //"niri/window"
+    ],
+    "modules-right": [
+      "network",
+      "group/hardware",
+      "clock",
+      "niri/language"
+    ],
+    "niri/workspaces": {
+      "format-icons": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "active": "",
+        "default": ""
+      }
+    }
+  },
+  {
+    "include": [
+      "~/.config/waybar/modules.json"
+    ],
+    "layer": "top",
+    "output": "HDMI-A-1",
+    "modules-center": [
+      "custom/menu",
+      "niri/workspaces",
+      "niri/submap"
+      //"niri/window"
+    ],
+    "modules-right": [
+      "clock"
+    ],
+    "clock": {
+      "format-alt": "{:%a, %d. %b  %H:%M}"
+    }
+  }
+]

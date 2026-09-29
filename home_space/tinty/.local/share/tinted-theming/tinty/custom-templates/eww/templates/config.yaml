@@ -1,0 +1,16 @@
+# eww
+# ----------------------------------------------------------------------
+eww-base16:
+  filename: themes/{{ scheme-system }}-{{ scheme-slug }}.scss
+  supported-systems: [base16]
+
+eww-base24:
+  filename: themes/{{ scheme-system }}-{{ scheme-slug }}.scss
+  supported-systems: [base24]
+
+eww-tinted8:
+  filename: themes/{{ scheme-system }}-{{ scheme-slug }}.scss
+  supported-systems: [tinted8]
+  supports:
+    tinted8-builder: ~0.2.0
+    tinted8-styling: ~0.2.0

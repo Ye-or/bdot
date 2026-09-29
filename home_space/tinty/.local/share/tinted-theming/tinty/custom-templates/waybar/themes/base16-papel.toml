@@ -1,0 +1,10 @@
+/* base16 Papel 256 - alacritty color config
+ * Teshre
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #f5efe2;
+@define-color foreground #3a2e20;
+@define-color accent #3a2e20;

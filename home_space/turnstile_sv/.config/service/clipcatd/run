@@ -1,0 +1,43 @@
+#!/bin/sh
+# ~/.config/service/clipcatd/run
+
+[ -r ./conf ] && . ./conf
+echo "HOME: $HOME"
+echo "RUNTIME_DIR             : $RUNTIME_DIR"
+echo "SOCKET_DIR              : $SOCKET_DIR"
+echo "SOCKET_PATH             : $SOCKET_PATH"
+echo "WAYLAND_DISPLAY         : $WAYLAND_DISPLAY"
+echo "DISPLAY                 : $DISPLAY"
+echo "DBUS                    : $DBUS"
+echo "DBUS_SESSION_BUS_ADDRESS: $DBUS_SESSION_BUS_ADDRESS"
+
+if rm -f "$SOCKET_PATH"; then
+  echo "rm ${SOCKET_PATH}: OK" 2>&1
+else
+  echo "rm ${SOCKET_PATH}: ERROR" 2>&1
+  exit 1
+fi
+
+if mkdir -p "$SOCKET_DIR"; then
+  echo "mkdir ${SOCKET_DIR}: OK " 2>&1
+else
+  echo "mkdir ${SOCKET_DIR}: ERROR" 2>&1
+  exit 1
+fi
+
+CLIPCAT_HISTORY_DIR="/tmp/clipcat-$(id -u)/clipcatd-history"
+if mkdir -p "$CLIPCAT_HISTORY_DIR"; then
+  echo "mkdir ${CLIPCAT_HISTORY_DIR}: OK " 2>&1
+else
+  echo "mkdir ${CLIPCAT_HISTORY_DIR}: ERROR" 2>&1
+  exit 1
+fi
+
+#exec chpst -e "$(dirname "$0")/env" sh -c 'exec clipcatd --no-daemon --replace' 2>&1
+
+exec clipcatd \
+  --history-file "/tmp/clipcat-1000/clipcatd-history" \
+  --grpc-host "127.0.0.1" \
+  --grpc-port "45045" \
+  --grpc-socket-path "/run/user/1000/clipcat/grpc.sock" \
+  --no-daemon --replace 2>&1

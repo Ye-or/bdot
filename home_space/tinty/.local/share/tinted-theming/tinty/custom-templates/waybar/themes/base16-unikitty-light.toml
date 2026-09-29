@@ -1,0 +1,10 @@
+/* base16 Unikitty Light 256 - alacritty color config
+ * Josh W Lewis (@joshwlewis)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #ffffff;
+@define-color foreground #6c696e;
+@define-color accent #6c696e;

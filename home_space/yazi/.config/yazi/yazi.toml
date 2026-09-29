@@ -1,0 +1,23 @@
+[mgr]
+ratio = [1, 4, 3]     # Pane width ratios [parent, current, preview]
+sort_by = "natural"   # natural, mtime, extension, alphabetical, size
+sort_dir_first = true # Directories listed before files
+show_hidden = true    # Show dotfiles
+scrolloff = 5         # Cursor padding from edge
+linemode = "none"     # none, size, mtime, permissions, owner
+
+[preview]
+# Ограничиваем размер, чтобы Chafa не тормозил на огромных изображениях
+max_width = 1200
+max_height = 1000
+
+# Алгоритм масштабирования изображения перед превью в символы.
+# Варианты: triangle, catmull-rom, lanczos3 (lanczos3 дает самую четкую картинку, но работает чуть медленнее)
+image_filter = "triangle"
+
+# Качество изображения (от 50 до 100). 
+# Влияет на то, насколько точно Chafa подберет цвета для символов.
+image_quality = 50
+
+[opener]
+edit = [{ run = '${EDITOR:-vim} "$@"', block = true, desc = "Edit" }]

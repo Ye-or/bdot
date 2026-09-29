@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+turnstile-update-runit-env \
+  DISPLAY \
+  WAYLAND_DISPLAY \
+  XDG_RUNTIME_DIR \
+  XDG_SESSION_TYPE \
+  XDG_CURRENT_DESKTOP \
+  XDG_CACHE_HOME \
+  DBUS_SESSION_BUS_ADDRESS \
+  NIRI_SOCKET \
+  PATH

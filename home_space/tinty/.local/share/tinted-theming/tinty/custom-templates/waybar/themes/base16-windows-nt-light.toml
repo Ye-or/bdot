@@ -1,0 +1,10 @@
+/* base16 Windows NT Light 256 - alacritty color config
+ * Fergus Collins (https://github.com/ferguscollins)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #ffffff;
+@define-color foreground #808080;
+@define-color accent #808080;

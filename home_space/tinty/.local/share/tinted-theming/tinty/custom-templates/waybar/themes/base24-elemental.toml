@@ -1,0 +1,10 @@
+/* base24 Elemental 256 - alacritty color config
+ * FredHappyface (https://github.com/fredHappyface)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #21211c;
+@define-color foreground #756f68;
+@define-color accent #756f68;

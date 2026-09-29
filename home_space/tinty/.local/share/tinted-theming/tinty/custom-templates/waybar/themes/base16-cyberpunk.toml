@@ -1,0 +1,10 @@
+/* base16 Cyberpunk 256 - alacritty color config
+ * benjujo
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #000000;
+@define-color foreground #dcdccc;
+@define-color accent #dcdccc;

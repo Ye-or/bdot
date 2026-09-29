@@ -1,0 +1,37 @@
+/**
+ * Base16 Fideloper ROFI Color theme
+ *
+ * Authors
+ *  Scheme: FredHappyface (https://github.com/fredHappyface)
+ *  Template: Tinted Theming (https://github.com/tinted-theming)
+ */
+
+* {
+    red:                         rgba ( 202, 29, 44, 100 % );
+    blue:                        rgba ( 46, 120, 193, 100 % );
+    lightfg:                     rgba ( 233, 226, 205, 100 % );
+    lightbg:                     rgba ( 40, 47, 50, 100 % );
+    foreground:                  rgba ( 177, 177, 163, 100 % );
+    background:                  rgba ( 40, 47, 50, 100 % );
+    background-color:            rgba ( 40, 47, 50, 0 % );
+    separatorcolor:              @foreground;
+    border-color:                @foreground;
+    selected-normal-foreground:  @lightbg;
+    selected-normal-background:  @lightfg;
+    selected-active-foreground:  @background;
+    selected-active-background:  @blue;
+    selected-urgent-foreground:  @background;
+    selected-urgent-background:  @red;
+    normal-foreground:           @foreground;
+    normal-background:           @background;
+    active-foreground:           @blue;
+    active-background:           @background;
+    urgent-foreground:           @red;
+    urgent-background:           @background;
+    alternate-normal-foreground: @foreground;
+    alternate-normal-background: @lightbg;
+    alternate-active-foreground: @blue;
+    alternate-active-background: @lightbg;
+    alternate-urgent-foreground: @red;
+    alternate-urgent-background: @lightbg;
+}

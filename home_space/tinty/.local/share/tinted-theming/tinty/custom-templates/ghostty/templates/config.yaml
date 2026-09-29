@@ -1,0 +1,31 @@
+# Ghostty
+# ----------------------------------------------------------------------
+ghostty-base16:
+  filename: themes/ghostty/{{ scheme-system }}-{{ scheme-slug }}
+  supported-systems: [base16]
+
+ghostty-base24:
+  filename: themes/ghostty/{{ scheme-system }}-{{ scheme-slug }}
+  supported-systems: [base24]
+
+ghostty-tinted8:
+  filename: themes/ghostty/{{ scheme-system }}-{{ scheme-slug }}
+  supported-systems: [tinted8]
+  supports:
+    tinted8-builder: ~0.2.0
+    tinted8-styling: ~0.2.0
+
+ghostty-script-base16:
+  filename: themes/ghostty-scripts/{{ scheme-system }}-{{ scheme-slug }}.sh
+  supported-systems: [base16]
+
+ghostty-script-base24:
+  filename: themes/ghostty-scripts/{{ scheme-system }}-{{ scheme-slug }}.sh
+  supported-systems: [base24]
+
+ghostty-script-tinted8:
+  filename: themes/ghostty-scripts/{{ scheme-system }}-{{ scheme-slug }}.sh
+  supported-systems: [tinted8]
+  supports:
+    tinted8-builder: ~0.2.0
+    tinted8-styling: ~0.2.0

@@ -1,0 +1,10 @@
+/* base16 Jellybeans 256 - alacritty color config
+ * FredHappyface (https://github.com/fredHappyface), converted to Base16 by https://github.com/nonetrix
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #121212;
+@define-color foreground #d5d5d5;
+@define-color accent #d5d5d5;

@@ -1,0 +1,11 @@
+# Enhanced copy function
+copy() {
+  local count=$#
+  if [[ $count -eq 2 ]] && [[ -d "$1" ]]; then
+    local from="${1%/}"  # Remove trailing slash
+    local to="$2"
+    command cp -r "$from" "$to"
+  else
+    command cp "$@"
+  fi
+}

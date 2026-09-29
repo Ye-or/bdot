@@ -1,0 +1,37 @@
+# WORK_IMAGE
+ImageMagick
+gimp
+imv # разобраться чем отличается от feh
+feh
+# ZATHURA
+zathura
+zathura-pdf-mupdf
+zathura-djvu
+zathura-cb
+ASINC_IMAGE
+chafa # asinc image viewer
+ascii-image-converter
+# UML
+plantuml
+# VIRTUALIZATION
+docker
+qemu
+libvirt
+virt-manager
+virtualbox-ose
+virtualbox-ose-dkms
+# ANDROID_TOOLS
+android-tools
+android-file-transfer-linux
+android-udev-rules
+# AUDIO
+pipewire
+alsa-pipewire
+pulseaudio-utils
+libspa-bluetooth
+# MULTIMEDIA
+easyeffects #Sound effects for systems using PipeWire
+cmus #Music player
+speech-dispatcher #Speech synthesis
+# OTHER
+wev # keyboard key code

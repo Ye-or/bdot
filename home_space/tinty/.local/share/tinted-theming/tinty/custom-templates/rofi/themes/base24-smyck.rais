@@ -1,0 +1,37 @@
+/**
+ * Base16 Smyck ROFI Color theme
+ *
+ * Authors
+ *  Scheme: FredHappyface (https://github.com/fredHappyface)
+ *  Template: Tinted Theming (https://github.com/tinted-theming)
+ */
+
+* {
+    red:                         rgba ( 183, 65, 49, 100 % );
+    blue:                        rgba ( 98, 163, 196, 100 % );
+    lightfg:                     rgba ( 160, 160, 160, 100 % );
+    lightbg:                     rgba ( 0, 0, 0, 100 % );
+    foreground:                  rgba ( 150, 150, 150, 100 % );
+    background:                  rgba ( 27, 27, 27, 100 % );
+    background-color:            rgba ( 27, 27, 27, 0 % );
+    separatorcolor:              @foreground;
+    border-color:                @foreground;
+    selected-normal-foreground:  @lightbg;
+    selected-normal-background:  @lightfg;
+    selected-active-foreground:  @background;
+    selected-active-background:  @blue;
+    selected-urgent-foreground:  @background;
+    selected-urgent-background:  @red;
+    normal-foreground:           @foreground;
+    normal-background:           @background;
+    active-foreground:           @blue;
+    active-background:           @background;
+    urgent-foreground:           @red;
+    urgent-background:           @background;
+    alternate-normal-foreground: @foreground;
+    alternate-normal-background: @lightbg;
+    alternate-active-foreground: @blue;
+    alternate-active-background: @lightbg;
+    alternate-urgent-foreground: @red;
+    alternate-urgent-background: @lightbg;
+}

@@ -1,0 +1,10 @@
+/* base16 Woodland 256 - alacritty color config
+ * Jay Cornwall (https://jcornwall.com)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #231e18;
+@define-color foreground #cabcb1;
+@define-color accent #cabcb1;

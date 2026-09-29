@@ -1,0 +1,10 @@
+/* base16 0x96f 256 - alacritty color config
+ * Filip Janevski (https://0x96f.dev/theme)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #262427;
+@define-color foreground #fcfcfc;
+@define-color accent #fcfcfc;

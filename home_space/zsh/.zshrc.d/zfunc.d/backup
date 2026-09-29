@@ -1,0 +1,8 @@
+# Backup function
+backup() {
+  if [[ -n "$1" ]]; then
+    cp "$1" "$1.bak"
+  else
+    echo "Usage: backup <filename>"
+  fi
+}

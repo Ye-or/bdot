@@ -1,0 +1,10 @@
+/* base16 Penumbra Dark Contrast Plus 256 - alacritty color config
+ * Zachary Weiss (https://github.com/zacharyweiss)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #181b1f;
+@define-color foreground #cecece;
+@define-color accent #cecece;

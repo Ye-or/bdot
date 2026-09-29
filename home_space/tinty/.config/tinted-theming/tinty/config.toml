@@ -1,0 +1,86 @@
+shell = "bash -c '{}'"
+default-scheme = "base16-just-gray"
+
+#tinty cycle --ring default
+[[rings]]
+name = "default"
+schemes = ["base16-grayscale-dark", "base16-grayscale-light"]
+
+[[rings]]
+name = "charcoal"
+schemes = ["base16-charcoal-dark", "base16-charcoal-light"]
+
+### Repos ###
+#не удалять!
+[[items]]
+path = "https://github.com/tinted-theming/tinted-terminal"
+name = "tinted-terminal"
+themes-dir = "themes/alacritty"
+
+[[items]]
+name = "tinted-shell"
+path = "https://github.com/tinted-theming/tinted-shell"
+hook = ". %f; cp -f %f ~/.local/bin/tinted-shell-scripts-file.sh"
+supported-systems = ["base16"]
+
+themes-dir = "scripts"
+[[items]]
+name = "tinted-nvim"
+path = "~/.local/share/nvim/lazy/tinted-nvim/"
+themes-dir = "colors"
+supported-systems = ["base16", "base24"]
+
+[[items]]
+name = "tinted-niri"
+path = "https://github.com/jaycem-dev/base16-niri"
+themes-dir = "themes"
+supported-systems = ["base16"]
+hook = "cp -f %f ~/.config/niri/colors.kdl"
+
+[[items]]
+name = "tinted-swaylock"
+path = "https://github.com/jaycem-dev/base16-swaylock"
+themes-dir = "themes"
+supported-systems = ["base16"]
+hook = "cp -f %f ~/.config/swaylock/config"
+
+### Custom ###
+[[items]]
+path = "~/.local/share/tinted-theming/tinty/custom-templates/alacritty"
+name = "alacritty"
+themes-dir = "themes"
+hook = "cp -f %f ~/.config/alacritty/colors.toml && touch ~/.config/alacritty/alacritty.toml"
+supported-systems = ["base16", "base24"]
+
+[[items]]
+path = "~/.local/share/tinted-theming/tinty/custom-templates/ghostty"
+name = "ghostty"
+themes-dir = "themes/ghostty"
+# With `theme` set to "tinted-theming", this will be where Ghostty looks for the theme file:
+hook = """
+mkdir -p ~/.config/ghostty/themes
+cp -f %f ~/.config/ghostty/themes/tinted-theming && touch ~/.config/ghostty/themes/tinted-theming 
+#&& ghostty +reload-config>/dev/null || true
+"""
+supported-systems = ["base16", "base24"]
+
+[[items]]
+name = "waybar"
+path = "~/.local/share/tinted-theming/tinty/custom-templates/waybar"
+themes-dir = "themes"
+hook = "cp -f %f ~/.config/waybar/colors.css && touch ~/.config/waybar/colors.css && pkill -SIGUSR2 waybar>/dev/null"
+supported-systems = ["base16", "base24"]
+
+[[items]]
+name = "rofi"
+path = "~/.local/share/tinted-theming/tinty/custom-templates/rofi"
+themes-dir = "themes"
+hook = "cp -f %f ~/.config/rofi/colors.rasi && touch ~/.config/rofi/colors.rasi"
+supported-systems = ["base16", "base24"]
+
+[[items]]
+path = "~/.local/share/tinted-theming/tinty/custom-templates/eww"
+name = "eww"
+themes-dir = "themes"
+hook = "cp -f %f ~/.config/eww/colors.scss && touch ~/.config/eww/eww.scss; eww reload"
+supported-systems = ["base16", "base24"]

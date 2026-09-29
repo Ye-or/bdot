@@ -1,0 +1,16 @@
+# Rofi
+# ----------------------------------------------------------------------
+rofi-base16:
+  filename: themes/{{ scheme-system }}-{{ scheme-slug }}.rais
+  supported-systems: [base16]
+
+rofi-base24:
+  filename: themes/{{ scheme-system }}-{{ scheme-slug }}.rais
+  supported-systems: [base24]
+
+rofi-tinted8:
+  filename: themes/{{ scheme-system }}-{{ scheme-slug }}.rais
+  supported-systems: [tinted8]
+  supports:
+    tinted8-builder: ~0.2.0
+    tinted8-styling: ~0.2.0

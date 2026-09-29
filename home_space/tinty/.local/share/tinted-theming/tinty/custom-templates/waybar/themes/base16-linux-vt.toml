@@ -1,0 +1,10 @@
+/* base16 Linux VT 256 - alacritty color config
+ * j-c-m (https://github.com/j-c-m/)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #000000;
+@define-color foreground #aaaaaa;
+@define-color accent #aaaaaa;

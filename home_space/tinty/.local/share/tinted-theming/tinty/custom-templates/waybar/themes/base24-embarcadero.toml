@@ -1,0 +1,10 @@
+/* base24 Embarcadero 256 - alacritty color config
+ * Thomas Leon Highbaugh
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #252a2f;
+@define-color foreground #bcbdc0;
+@define-color accent #bcbdc0;

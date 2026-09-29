@@ -1,0 +1,10 @@
+/* base16 Cerulean Signal Light 256 - alacritty color config
+ * Aaron Colichia (https://aaron.colichia.org/)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #f7f9fc;
+@define-color foreground #232b38;
+@define-color accent #232b38;

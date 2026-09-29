@@ -1,0 +1,22 @@
+-- rust.lua is disabled (settings moved to core.lua)
+-- Uncomment below to enable:
+-- return {
+--   "mrcjkb/rustaceanvim",
+--   version = "^5",
+--   lazy = false,
+--   ft = "rust",
+--   config = function()
+--     local lspconfig = require("lspconfig")
+--     lspconfig.rust_analyzer.setup({
+--       cmd = { "/usr/bin/rust-analyzer" },
+--       settings = {
+--         ["rust-analyzer"] = {
+--           cargo = { allFeatures = true },
+--           procMacro = { enable = true },
+--         },
+--       },
+--     })
+--   end,
+-- }
+
+return {}

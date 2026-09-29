@@ -1,0 +1,37 @@
+/**
+ * Base16 Hopscotch ROFI Color theme
+ *
+ * Authors
+ *  Scheme: FredHappyface (https://github.com/fredHappyface)
+ *  Template: Tinted Theming (https://github.com/tinted-theming)
+ */
+
+* {
+    red:                         rgba ( 221, 70, 76, 100 % );
+    blue:                        rgba ( 18, 144, 191, 100 % );
+    lightfg:                     rgba ( 185, 181, 184, 100 % );
+    lightbg:                     rgba ( 50, 41, 49, 100 % );
+    foreground:                  rgba ( 169, 164, 168, 100 % );
+    background:                  rgba ( 50, 41, 49, 100 % );
+    background-color:            rgba ( 50, 41, 49, 0 % );
+    separatorcolor:              @foreground;
+    border-color:                @foreground;
+    selected-normal-foreground:  @lightbg;
+    selected-normal-background:  @lightfg;
+    selected-active-foreground:  @background;
+    selected-active-background:  @blue;
+    selected-urgent-foreground:  @background;
+    selected-urgent-background:  @red;
+    normal-foreground:           @foreground;
+    normal-background:           @background;
+    active-foreground:           @blue;
+    active-background:           @background;
+    urgent-foreground:           @red;
+    urgent-background:           @background;
+    alternate-normal-foreground: @foreground;
+    alternate-normal-background: @lightbg;
+    alternate-active-foreground: @blue;
+    alternate-active-background: @lightbg;
+    alternate-urgent-foreground: @red;
+    alternate-urgent-background: @lightbg;
+}

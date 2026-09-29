@@ -1,0 +1,10 @@
+/* base16 Windows 10 256 - alacritty color config
+ * Fergus Collins (https://github.com/ferguscollins)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #0c0c0c;
+@define-color foreground #cccccc;
+@define-color accent #cccccc;

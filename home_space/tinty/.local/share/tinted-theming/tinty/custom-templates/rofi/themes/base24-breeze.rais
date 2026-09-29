@@ -1,0 +1,37 @@
+/**
+ * Base16 Breeze ROFI Color theme
+ *
+ * Authors
+ *  Scheme: FredHappyface (https://github.com/fredHappyface)
+ *  Template: Tinted Theming (https://github.com/tinted-theming)
+ */
+
+* {
+    red:                         rgba ( 237, 21, 21, 100 % );
+    blue:                        rgba ( 29, 153, 243, 100 % );
+    lightfg:                     rgba ( 239, 240, 241, 100 % );
+    lightbg:                     rgba ( 49, 54, 59, 100 % );
+    foreground:                  rgba ( 211, 215, 216, 100 % );
+    background:                  rgba ( 49, 54, 59, 100 % );
+    background-color:            rgba ( 49, 54, 59, 0 % );
+    separatorcolor:              @foreground;
+    border-color:                @foreground;
+    selected-normal-foreground:  @lightbg;
+    selected-normal-background:  @lightfg;
+    selected-active-foreground:  @background;
+    selected-active-background:  @blue;
+    selected-urgent-foreground:  @background;
+    selected-urgent-background:  @red;
+    normal-foreground:           @foreground;
+    normal-background:           @background;
+    active-foreground:           @blue;
+    active-background:           @background;
+    urgent-foreground:           @red;
+    urgent-background:           @background;
+    alternate-normal-foreground: @foreground;
+    alternate-normal-background: @lightbg;
+    alternate-active-foreground: @blue;
+    alternate-active-background: @lightbg;
+    alternate-urgent-foreground: @red;
+    alternate-urgent-background: @lightbg;
+}

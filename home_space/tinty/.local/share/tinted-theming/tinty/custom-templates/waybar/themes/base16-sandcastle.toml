@@ -1,0 +1,10 @@
+/* base16 Sandcastle 256 - alacritty color config
+ * George Essig (https://github.com/gessig)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #282c34;
+@define-color foreground #a89984;
+@define-color accent #a89984;

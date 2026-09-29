@@ -1,0 +1,45 @@
+# ~/.config/service/clipcatd/conf
+
+# ==========================================
+# 1. ПЕРЕМЕННЫЕ ГРАФИЧЕСКОЙ СЕССИИ (КРИТИЧНО)
+# ==========================================
+
+# Определяем UID пользователя для путей
+USER_ID=$(id -u)
+
+# --- Для Wayland ---
+# Обычно сокет называется wayland-1, но может быть и другим
+export WAYLAND_DISPLAY="${WAYLAND_DISPLAY:-wayland-1}"
+export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$USER_ID}"
+export XDG_SESSION_TYPE="${XDG_SESSION_TYPE:-wayland}" # или x11, если используете Xorg
+
+# --- Для X11 (если вы используете Xorg или Xwayland) ---
+export DISPLAY="${DISPLAY:-:0}"
+export XAUTHORITY="${XAUTHORITY:-$HOME/.Xauthority}"
+
+# --- D-Bus (нужен для многих GUI-интеграций) ---
+export DBUS_SESSION_BUS_ADDRESS="${DBUS_SESSION_BUS_ADDRESS:-unix:path=/run/user/$USER_ID/bus}"
+
+# ==========================================
+# 2. ПУТИ И НАСТРОЙКИ САМОГО СЕРВИСА
+# ==========================================
+
+# Путь к исполняемому файлу clipcatd.
+# Если вы собирали через cargo, замените на: CLIPCATD_BIN="$HOME/.cargo/bin/clipcatd"
+#CLIPCATD_BIN="${CLIPCATD_BIN:-$HOME/.cargo/bin/clipcatd}"
+
+# Директория для runtime-файлов (сокеты). 
+# По умолчанию использует XDG_RUNTIME_DIR, иначе /tmp.
+RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp}"
+
+# Полный путь к сокету и его директории
+SOCKET_DIR="$RUNTIME_DIR/clipcat"
+SOCKET_PATH="$SOCKET_DIR/grpc.sock"
+CLIPCAT_HISTORY_DIR="/tmp/clipcat-$(id -u)/clipcatd-history"
+
+# Директория для хранения логов (соответствует XDG_STATE_HOME)
+LOG_DIR="${LOG_DIR:-$HOME/var/log/clipcatd}"
+
+
+
+

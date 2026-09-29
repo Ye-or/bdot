@@ -1,0 +1,10 @@
+/* base16 Blue Forest 256 - alacritty color config
+ * alonsodomin (https://github.com/alonsodomin)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #141f2e;
+@define-color foreground #ffcc33;
+@define-color accent #ffcc33;

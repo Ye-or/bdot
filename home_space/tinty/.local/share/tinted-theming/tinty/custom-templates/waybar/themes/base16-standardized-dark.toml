@@ -1,0 +1,10 @@
+/* base16 standardized-dark 256 - alacritty color config
+ * ali (https://github.com/ali-githb/base16-standardized-scheme)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #222222;
+@define-color foreground #c0c0c0;
+@define-color accent #c0c0c0;

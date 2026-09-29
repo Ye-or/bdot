@@ -1,0 +1,10 @@
+/* base16 Github Light High Contrast 256 - alacritty color config
+ * Tinted Theming (https://github.com/tinted-theming)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #ffffff;
+@define-color foreground #343b43;
+@define-color accent #343b43;

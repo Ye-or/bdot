@@ -1,0 +1,37 @@
+/**
+ * Base16 Challenger Deep ROFI Color theme
+ *
+ * Authors
+ *  Scheme: FredHappyface (https://github.com/fredHappyface)
+ *  Template: Tinted Theming (https://github.com/tinted-theming)
+ */
+
+* {
+    red:                         rgba ( 255, 84, 88, 100 % );
+    blue:                        rgba ( 101, 178, 255, 100 % );
+    lightfg:                     rgba ( 166, 179, 204, 100 % );
+    lightbg:                     rgba ( 20, 17, 39, 100 % );
+    foreground:                  rgba ( 146, 155, 182, 100 % );
+    background:                  rgba ( 30, 28, 49, 100 % );
+    background-color:            rgba ( 30, 28, 49, 0 % );
+    separatorcolor:              @foreground;
+    border-color:                @foreground;
+    selected-normal-foreground:  @lightbg;
+    selected-normal-background:  @lightfg;
+    selected-active-foreground:  @background;
+    selected-active-background:  @blue;
+    selected-urgent-foreground:  @background;
+    selected-urgent-background:  @red;
+    normal-foreground:           @foreground;
+    normal-background:           @background;
+    active-foreground:           @blue;
+    active-background:           @background;
+    urgent-foreground:           @red;
+    urgent-background:           @background;
+    alternate-normal-foreground: @foreground;
+    alternate-normal-background: @lightbg;
+    alternate-active-foreground: @blue;
+    alternate-active-background: @lightbg;
+    alternate-urgent-foreground: @red;
+    alternate-urgent-background: @lightbg;
+}

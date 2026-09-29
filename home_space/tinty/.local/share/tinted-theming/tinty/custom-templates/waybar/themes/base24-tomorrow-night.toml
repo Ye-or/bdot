@@ -1,0 +1,10 @@
+/* base24 Tomorrow Night 256 - alacritty color config
+ * Cody Buell (https://github.com/codybuell)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #1d1f21;
+@define-color foreground #c5c8c6;
+@define-color accent #c5c8c6;

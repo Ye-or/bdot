@@ -1,0 +1,10 @@
+/* base16 One Light 256 - alacritty color config
+ * Daniel Pfeifer (http://github.com/purpleKarrot)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #fafafa;
+@define-color foreground #383a42;
+@define-color accent #383a42;

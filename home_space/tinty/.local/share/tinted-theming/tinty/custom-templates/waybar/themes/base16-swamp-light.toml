@@ -1,0 +1,10 @@
+/* base16 Swamp Light 256 - alacritty color config
+ * Masroof Maindak (https://github.com/masroof-maindak)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #f1e3d1;
+@define-color foreground #64513e;
+@define-color accent #64513e;

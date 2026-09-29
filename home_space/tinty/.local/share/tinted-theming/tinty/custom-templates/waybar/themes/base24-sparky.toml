@@ -1,0 +1,10 @@
+/* base24 Sparky 256 - alacritty color config
+ * Leila Sother (https://github.com/mixcoac)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #072b31;
+@define-color foreground #f4f5f0;
+@define-color accent #f4f5f0;

@@ -1,0 +1,10 @@
+/* base16 Precious Dark Eleven 256 - alacritty color config
+ * 4lex4 &lt;4lex49@zoho.com&gt;
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #1c1e20;
+@define-color foreground #b8b7b6;
+@define-color accent #b8b7b6;

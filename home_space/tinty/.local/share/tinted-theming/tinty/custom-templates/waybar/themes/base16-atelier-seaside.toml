@@ -1,0 +1,10 @@
+/* base16 Atelier Seaside 256 - alacritty color config
+ * Bram de Haan (http://atelierbramdehaan.nl)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #131513;
+@define-color foreground #8ca68c;
+@define-color accent #8ca68c;

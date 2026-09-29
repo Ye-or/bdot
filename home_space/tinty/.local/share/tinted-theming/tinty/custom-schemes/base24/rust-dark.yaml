@@ -1,0 +1,30 @@
+system: "base24"
+name: "Rust Dark"
+author: "Ake"
+variant: "dark"
+palette:
+  base00: "#1e1e2e" # Background
+  base01: "#282840" # Lighter Background
+  base02: "#383850" # Selection Background
+  base03: "#585870" # Comments
+  base04: "#a6adc8" # Dark Foreground
+  base05: "#cdd6f4" # Default Foreground
+  base06: "#f5e0dc" # Light Foreground
+  base07: "#b4befe" # Light Background (for contrast)
+  base08: "#f38ba8" # Red (Errors, Cargo warnings)
+  base09: "#fab387" # Orange
+  base0A: "#f9e2af" # Yellow
+  base0B: "#a6e3a1" # Green (Success, Strings)
+  base0C: "#94e2d5" # Cyan
+  base0D: "#89b4fa" # Blue (Keywords, Types)
+  base0E: "#cba6f7" # Magenta
+  base0F: "#f2cdcd" # Base24 extra 1
+  # Base24 specific extensions (if supported by template)
+  base10: "#f38ba8"
+  base11: "#fab387"
+  base12: "#f9e2af"
+  base13: "#a6e3a1"
+  base14: "#94e2d5"
+  base15: "#89b4fa"
+  base16: "#cba6f7"
+  base17: "#f2cdcd"

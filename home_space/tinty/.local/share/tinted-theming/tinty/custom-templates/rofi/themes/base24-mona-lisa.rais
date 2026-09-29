@@ -1,0 +1,37 @@
+/**
+ * Base16 Mona Lisa ROFI Color theme
+ *
+ * Authors
+ *  Scheme: FredHappyface (https://github.com/fredHappyface)
+ *  Template: Tinted Theming (https://github.com/tinted-theming)
+ */
+
+* {
+    red:                         rgba ( 155, 40, 27, 100 % );
+    blue:                        rgba ( 81, 91, 92, 100 % );
+    lightfg:                     rgba ( 246, 215, 92, 100 % );
+    lightbg:                     rgba ( 52, 26, 13, 100 % );
+    foreground:                  rgba ( 218, 177, 78, 100 % );
+    background:                  rgba ( 17, 11, 13, 100 % );
+    background-color:            rgba ( 17, 11, 13, 0 % );
+    separatorcolor:              @foreground;
+    border-color:                @foreground;
+    selected-normal-foreground:  @lightbg;
+    selected-normal-background:  @lightfg;
+    selected-active-foreground:  @background;
+    selected-active-background:  @blue;
+    selected-urgent-foreground:  @background;
+    selected-urgent-background:  @red;
+    normal-foreground:           @foreground;
+    normal-background:           @background;
+    active-foreground:           @blue;
+    active-background:           @background;
+    urgent-foreground:           @red;
+    urgent-background:           @background;
+    alternate-normal-foreground: @foreground;
+    alternate-normal-background: @lightbg;
+    alternate-active-foreground: @blue;
+    alternate-active-background: @lightbg;
+    alternate-urgent-foreground: @red;
+    alternate-urgent-background: @lightbg;
+}

@@ -1,0 +1,19 @@
+# SYSTEM UTILITIES
+git
+stow
+lshw
+upower
+seatd
+turnstile
+dbus
+rtkit
+syslog-ng
+base-devel
+base-system
+bash-completion
+# SAFETY
+mokutil
+polkit
+bluez 
+# bluetoothctl
+

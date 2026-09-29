@@ -1,0 +1,37 @@
+/**
+ * Base16 Slate ROFI Color theme
+ *
+ * Authors
+ *  Scheme: FredHappyface (https://github.com/fredHappyface)
+ *  Template: Tinted Theming (https://github.com/tinted-theming)
+ */
+
+* {
+    red:                         rgba ( 225, 167, 191, 100 % );
+    blue:                        rgba ( 37, 74, 73, 100 % );
+    lightfg:                     rgba ( 2, 196, 224, 100 % );
+    lightbg:                     rgba ( 33, 33, 33, 100 % );
+    foreground:                  rgba ( 66, 211, 232, 100 % );
+    background:                  rgba ( 33, 33, 33, 100 % );
+    background-color:            rgba ( 33, 33, 33, 0 % );
+    separatorcolor:              @foreground;
+    border-color:                @foreground;
+    selected-normal-foreground:  @lightbg;
+    selected-normal-background:  @lightfg;
+    selected-active-foreground:  @background;
+    selected-active-background:  @blue;
+    selected-urgent-foreground:  @background;
+    selected-urgent-background:  @red;
+    normal-foreground:           @foreground;
+    normal-background:           @background;
+    active-foreground:           @blue;
+    active-background:           @background;
+    urgent-foreground:           @red;
+    urgent-background:           @background;
+    alternate-normal-foreground: @foreground;
+    alternate-normal-background: @lightbg;
+    alternate-active-foreground: @blue;
+    alternate-active-background: @lightbg;
+    alternate-urgent-foreground: @red;
+    alternate-urgent-background: @lightbg;
+}

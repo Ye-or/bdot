@@ -1,0 +1,10 @@
+/* base16 Monokai 256 - alacritty color config
+ * Wimer Hazenberg (http://www.monokai.nl)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #272822;
+@define-color foreground #f8f8f2;
+@define-color accent #f8f8f2;

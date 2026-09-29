@@ -1,0 +1,37 @@
+/**
+ * Base16 Hacktober ROFI Color theme
+ *
+ * Authors
+ *  Scheme: FredHappyface (https://github.com/fredHappyface)
+ *  Template: Tinted Theming (https://github.com/tinted-theming)
+ */
+
+* {
+    red:                         rgba ( 179, 69, 56, 100 % );
+    blue:                        rgba ( 32, 110, 197, 100 % );
+    lightfg:                     rgba ( 241, 238, 231, 100 % );
+    lightbg:                     rgba ( 25, 25, 24, 100 % );
+    foreground:                  rgba ( 191, 189, 183, 100 % );
+    background:                  rgba ( 20, 20, 20, 100 % );
+    background-color:            rgba ( 20, 20, 20, 0 % );
+    separatorcolor:              @foreground;
+    border-color:                @foreground;
+    selected-normal-foreground:  @lightbg;
+    selected-normal-background:  @lightfg;
+    selected-active-foreground:  @background;
+    selected-active-background:  @blue;
+    selected-urgent-foreground:  @background;
+    selected-urgent-background:  @red;
+    normal-foreground:           @foreground;
+    normal-background:           @background;
+    active-foreground:           @blue;
+    active-background:           @background;
+    urgent-foreground:           @red;
+    urgent-background:           @background;
+    alternate-normal-foreground: @foreground;
+    alternate-normal-background: @lightbg;
+    alternate-active-foreground: @blue;
+    alternate-active-background: @lightbg;
+    alternate-urgent-foreground: @red;
+    alternate-urgent-background: @lightbg;
+}

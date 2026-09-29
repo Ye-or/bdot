@@ -1,0 +1,10 @@
+/* base24 Purplepeter 256 - alacritty color config
+ * FredHappyface (https://github.com/fredHappyface)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #2a1a4a;
+@define-color foreground #c38e69;
+@define-color accent #c38e69;

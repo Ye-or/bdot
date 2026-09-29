@@ -1,0 +1,10 @@
+/* base16 Sakura 256 - alacritty color config
+ * Misterio77 (http://github.com/Misterio77)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #feedf3;
+@define-color foreground #564448;
+@define-color accent #564448;

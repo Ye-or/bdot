@@ -1,0 +1,10 @@
+/* base24 Tokyo Night Storm 256 - alacritty color config
+ * Michaël Ball, based on Tokyo Night by enkia (https://github.com/enkia/tokyo-night-vscode-theme)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #24283b;
+@define-color foreground #a9b1d6;
+@define-color accent #a9b1d6;

@@ -1,0 +1,18 @@
+# MODERN_CLI_UTILITIES
+zsh
+bat
+eza
+fd
+ripgrep
+yazi
+fzf
+zellij
+starship
+# READER
+neovim
+vim
+# MONITORIG
+bottom
+dust
+htop
+jq

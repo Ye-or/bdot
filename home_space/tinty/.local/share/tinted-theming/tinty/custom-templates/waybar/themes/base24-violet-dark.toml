@@ -1,0 +1,10 @@
+/* base24 Violet Dark 256 - alacritty color config
+ * FredHappyface (https://github.com/fredHappyface)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #1b1d1f;
+@define-color foreground #a7a59f;
+@define-color accent #a7a59f;

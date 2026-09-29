@@ -1,0 +1,37 @@
+# WAYLAND
+# TERMINAL_EMULATOR
+alacritty
+ghostty
+# BROWSER
+chromium
+firefox
+# SELF_WAYLAND
+wayland-protocols
+xorg-server-xwayland
+xwayland-satellite
+mesa-dri
+# FILE_MANAGER
+nemo
+Waybar
+rofi
+eww
+niri
+ddcutil
+breeze-cursors
+awww
+swaylock
+# SCREENSHOT_CROP/EDIT
+grim
+slurp
+swappy
+# BRIGHTNESS
+brightnessctl
+wlsunset
+# CLIPBOARD
+wl-clipboard
+wl-clip-persist
+# XDG
+xdg-desktop-portal-gnome
+blueprint-compiler
+libayatana-appindicator
+

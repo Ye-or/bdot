@@ -1,0 +1,10 @@
+/* base16 Twilight 256 - alacritty color config
+ * David Hart (https://github.com/hartbit)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #1e1e1e;
+@define-color foreground #a7a7a7;
+@define-color accent #a7a7a7;

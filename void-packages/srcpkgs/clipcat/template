@@ -1,0 +1,45 @@
+# Template file for 'clipcat'
+pkgname=clipcat
+version=0.26.0
+revision=1
+build_style=cargo
+make_build_args="--workspace"
+hostmakedepends="pkg-config protobuf"
+makedepends="libgit2-devel protobuf protobuf-devel dbus-devel libX11-devel libxcb-devel wayland-devel"
+short_desc="Clipboard manager written in Rust"
+maintainer="Your Name <your@email.com>"
+license="MIT"
+homepage="https://github.com/xrelkd/clipcat"
+distfiles="https://github.com/xrelkd/clipcat/archive/refs/tags/v${version}.tar.gz"
+checksum="3d20e3bbe7b5b7ac478e10e1892d3978a99f4573ed118574b4d441820cff3d7f"
+
+pre_build() {
+	local cfg=".cargo/config.toml"
+	[ -f .cargo/config ] && cfg=".cargo/config"
+
+	if [ -f "$cfg" ]; then
+		# Удаляем старую строку с LIBGIT2_NO_VENDOR, чтобы избежать ошибки "duplicate key"
+		sed -i '/LIBGIT2_NO_VENDOR/d' "$cfg"
+	else
+		mkdir -p .cargo
+		touch "$cfg"
+	fi
+
+	# Убеждаемся, что секция [env] существует
+	if ! grep -q '^\[env\]' "$cfg"; then
+		echo -e "\n[env]" >> "$cfg"
+	fi
+
+	# Добавляем нашу настройку, разрешающую vendor-сборку
+	echo 'LIBGIT2_NO_VENDOR = { value = "0", force = true }' >> "$cfg"
+}
+
+do_install() {
+	# Устанавливаем бинарные файлы вручную, так как это cargo workspace
+	for bin in clipcatctl clipcatd clipcat-menu clipcat-notify; do
+		vbin "target/${RUST_TARGET}/release/${bin}"
+	done
+
+	# Устанавливаем лицензию (перенесено сюда из post_install)
+	vlicense LICENSE
+}

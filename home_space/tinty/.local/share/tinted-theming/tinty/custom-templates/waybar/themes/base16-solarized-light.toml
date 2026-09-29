@@ -1,0 +1,10 @@
+/* base16 Solarized Light 256 - alacritty color config
+ * Ethan Schoonover (modified by aramisgithub)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #fdf6e3;
+@define-color foreground #586e75;
+@define-color accent #586e75;

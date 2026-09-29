@@ -1,0 +1,10 @@
+/* base16 Humanoid light 256 - alacritty color config
+ * Thomas (tasmo) Friese
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #f8f8f2;
+@define-color foreground #232629;
+@define-color accent #232629;

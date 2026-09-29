@@ -1,0 +1,10 @@
+/* base16 iA Dark 256 - alacritty color config
+ * iA Inc. (modified by aramisgithub)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #1a1a1a;
+@define-color foreground #cccccc;
+@define-color accent #cccccc;

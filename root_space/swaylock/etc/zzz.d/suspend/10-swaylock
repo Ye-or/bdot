@@ -1,0 +1,7 @@
+#!/bin/sh
+user="${SUDO_USER:-$(id -un)}"
+uid="${SUDO_UID:-$(id -u)}"
+runtime="/run/user/$uid"
+display="$(ls "$runtime" 2>/dev/null | grep -m1 '^wayland-[0-9]*$')"
+display="${display:-wayland-1}"
+exec sudo -u "$user" env XDG_RUNTIME_DIR="$runtime" WAYLAND_DISPLAY="$display" swaylock -f -F

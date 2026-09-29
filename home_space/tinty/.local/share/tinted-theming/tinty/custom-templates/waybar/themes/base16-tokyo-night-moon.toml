@@ -1,0 +1,10 @@
+/* base16 Tokyo Night Moon 256 - alacritty color config
+ * Ólafur Bjarki Bogason
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #222436;
+@define-color foreground #828bb8;
+@define-color accent #828bb8;

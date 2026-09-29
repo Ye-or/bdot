@@ -1,0 +1,69 @@
+@import "theme"
+
+configuration {
+
+
+    modi:                       "drun,run,window,ssh,combi";
+    combi-modi:                 "drun,run";
+
+
+    /* Боковая панель режимов */
+    sidebar-mode:               true;
+
+
+    display-drun:               "Apps";
+    display-run:                "Run";
+    display-window:             "Win";
+    display-ssh:                "SSH";
+    display-combi:              "All";
+
+
+    terminal:                   "alacritty";
+
+
+    /* SSH */
+    ssh-client:                 "ssh";
+    ssh-command:                "{terminal} -e {ssh-client} {host}";
+
+
+    /* Run-режим */
+    run-command:                "{cmd}";
+    run-shell-command:          "{terminal} -e {cmd}";
+
+
+    /* Внешний вид списка приложений */
+    show-icons:                 true;
+    icon-theme:                 "Papirus";
+    font:                       "JetBrains Mono Nerd Font 12";
+
+
+    /* Формат отображения элементов */
+    drun-display-format:        "{name}";
+    window-format:              "{w} · {c} · {t}";
+
+
+    /* Поиск и сортировка */
+    matching:                   "fuzzy";
+    sort:                       true;
+    case-sensitive:             false;
+    cycle:                      true;
+
+
+
+    /* Мышь */
+    hover-select:               true;
+    me-select-entry:            "MousePrimary";
+    me-accept-entry:            "MouseDPrimary";
+
+
+    /* Клавиши внутри Rofi */
+    kb-cancel:                  "Escape,Control+q";
+    kb-row-up:                  "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
+    kb-row-down:                "Down,Control+j";
+    kb-accept-entry:            "Control+m,Return,KP_Enter";
+    kb-remove-to-eol:           "Control+Shift+e";
+    kb-mode-next:               "Shift+Right,Control+Tab,Control+l";
+    kb-mode-previous:           "Shift+Left,Control+Shift+Tab,Control+h";
+    kb-remove-char-back:        "BackSpace";
+    kb-mode-complete:           "Control+Alt+l";
+}

@@ -1,0 +1,10 @@
+/* base16 Apathy 256 - alacritty color config
+ * Jannik Siebert (https://github.com/janniks)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #031a16;
+@define-color foreground #81b5ac;
+@define-color accent #81b5ac;

@@ -1,0 +1,10 @@
+/* base16 Macintosh 256 - alacritty color config
+ * Rebecca Bettencourt (http://www.kreativekorp.com)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #000000;
+@define-color foreground #c0c0c0;
+@define-color accent #c0c0c0;

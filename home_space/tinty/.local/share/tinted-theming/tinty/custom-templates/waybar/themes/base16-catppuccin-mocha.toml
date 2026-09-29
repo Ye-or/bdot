@@ -1,0 +1,10 @@
+/* base16 Catppuccin Mocha 256 - alacritty color config
+ * https://github.com/catppuccin/catppuccin
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #1e1e2e;
+@define-color foreground #cdd6f4;
+@define-color accent #cdd6f4;

@@ -1,0 +1,17 @@
+# Template file for 'ascii-image-converter'
+pkgname=ascii-image-converter
+version=1.13.1
+revision=1
+build_style=go
+go_import_path=github.com/TheZoraiz/ascii-image-converter
+short_desc="Cross-platform command-line tool to convert images into ascii art"
+maintainer="Your Name <you@example.com>"
+license="Apache-2.0"
+homepage="https://github.com/TheZoraiz/ascii-image-converter"
+distfiles="https://github.com/TheZoraiz/ascii-image-converter/archive/refs/tags/v${version}.tar.gz"
+checksum=3f4d6c62ee3f74c7c165c64209f9de8add01e6d3149174fe35f419cfaafc316a
+
+post_install() {
+	vlicense LICENSE.txt
+	vdoc README.md
+}

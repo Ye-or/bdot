@@ -1,0 +1,34 @@
+#!/bin/sh
+exec /usr/bin/nvidia-sleep.sh "resume"
+
+# 2. Ждем, пока ядро инициализирует PCIe и DRM
+sleep 2
+
+# Проверяем, включен ли HDMI-порт в niri
+#STATUS=$(niri msg outputs | grep -A 2 "HDMI-A-1" | grep "enabled: true")
+#
+#if [ -z "$STATUS" ]; then
+#    # Если порт не включился, перезапускаем niri
+#    # (niri корректно завершит сессию и переподключится через seatd/logind)
+#    pkill -SIGUSR1 niri 
+#fi
+
+# 3. Пытаемся принудительно заставить ядро перепроверить статус HDMI
+# (Замените card1 на ваш актуальный номер, если нужно, но обычно это card1 для dGPU)
+if [ -e /sys/class/drm/card1-HDMI-A-1/status ]; then
+    echo detect > /sys/class/drm/card1-HDMI-A-1/status
+fi
+
+# 4. Если niri всё еще не видит экран, пробуем программно "переткнуть" выход
+# и перезагрузить конфигурацию мониторов
+sleep 1
+niri msg output HDMI-A-1 off
+sleep 1
+niri msg output HDMI-A-1 on
+
+# 5. Если вообще ничего не помогло, перезапускаем niri (graceful restart)
+# niri при SIGUSR1 корректно пересоздает сессию без потери окон
+STATUS=$(niri msg outputs | grep -A 2 "HDMI-A-1" | grep "enabled: true")
+if [ -z "$STATUS" ]; then
+    pkill -SIGUSR1 niri
+fi

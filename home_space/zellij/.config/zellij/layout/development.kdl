@@ -1,0 +1,18 @@
+// https://zellij.dev/documentation/creating-a-layout.html
+layout {
+  cwd "$HOME/development/"
+
+  pane split_direction="vertical"  {
+    pane command="nvim"{
+      borderless true
+      focus true
+      size "70%"
+    }
+    pane {
+      name "Command"
+    }
+  }
+  pane size=1 borderless=true {
+      plugin location="zellij:compact-bar"
+  }
+}

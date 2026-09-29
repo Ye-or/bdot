@@ -1,0 +1,226 @@
+- plugins:
+    - dotplugin/dotbot-xbps/
+    - dotplugin/dotbot-xi/
+    - dotplugin/dotbot-sudo/sudo.py
+
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- sudo:
+    - xbps:
+        ### XBPS
+        - xtools
+        - void-repo-multilib
+        - void-repo-multilib-nonfree
+        - void-repo-nonfree
+        ### DEVELOPMENT
+    - shell:
+        - 
+          command: echo 'dev'
+          stdout: true
+    - xbps:
+        - cmake
+        - meson
+        - ninja
+        - lua
+        - luarocks
+        - rustup
+        - rust-analyzer
+        - nodejs
+        - openjdk
+        - openjdk17
+        - protobuf
+        - PyInstaller
+        - valgrind
+        - pkg-config
+        - sassc
+        - recode
+        - gettext
+        #- libgit2
+        - go
+        - libwebkit2gtk41
+        ### DEVELOPMENT_HEADERS (lib*-devel)
+        - eudev-libudev-devel
+        - glib-devel
+        - gtk4-devel
+        - libadwaita-devel
+        - libayatana-appindicator-devel
+        - libdrm-devel
+        - libevdev-devel
+        - libgbm-devel
+        - libgit2-devel
+        - librsvg-devel
+        - libsoup3-devel
+        - libwebkit2gtk41-devel
+        - libxkbcommon-devel
+        - pipewire-devel
+        - protobuf-devel
+        - i2c-tools-devel
+        ### SYSTEM UTILITIES
+        - git
+        - stow
+        - lshw
+        - upower
+        - seatd
+        - turnstile
+        - dbus
+        - rtkit
+        - syslog-ng
+        - base-devel
+        - base-system
+        - bash-completion
+        ### Safety
+        - mokutil
+        - polkit
+        - bluez # bluetoothctl
+        ### TAR
+        - 7zip
+        - unrar
+        - unzip
+        ### NETWORK
+        - chrony
+        - NetworkManager
+        - curl
+        - wget
+        - proxychains-ng
+        ### MODERN_CLI_UTILITIES
+        - zsh
+        - bat
+        - eza
+        - fd
+        - ripgrep
+        - yazi
+        - fzf
+        - zellij
+        - starship
+        ### READER
+        - neovim
+        - vim
+        ### MONITORIG
+        - bottom
+        - dust
+        - htop
+        ### FONTS
+        - nerd-fonts
+        - nerd-fonts-ttf
+        - noto-fonts-ttf
+        - terminus-font
+        - font-misc-misc
+### WAYLAND
+- sudo:
+    - xbps:
+        ### TERMINAL_EMULATOR
+        - alacritty
+        - ghostty
+        ### BROWSER
+        - chromium
+        - firefox
+        ### SELF_WAYLAND
+        - wayland-protocols
+        - xorg-server-xwayland
+        - xwayland-satellite
+        - mesa-dri
+        ### FILE_MANAGER
+        - nemo
+        - Waybar
+        - rofi
+        - niri
+        - ddcutil
+        - breeze-cursors
+        - awww
+        - swaylock
+        ### SCREENSHOT_CROP/EDIT
+        - grim
+        - slurp
+        - swappy
+        ### BRIGHTNESS
+        - brightnessctl
+        - wlsunset
+        ### CLIPBOARD
+        - wl-clipboard
+        - wl-clip-persist
+        ### XDG
+        - xdg-desktop-portal-gnome
+        - blueprint-compiler
+        - libayatana-appindicator
+
+- sudo:
+    - xbps:
+        ### WORK_IMAGE
+        - ImageMagick
+        - gimp
+        - imv # разобраться чем отличается от feh
+        - feh
+        ### ZATHURA
+        - zathura
+        - zathura-pdf-mupdf
+        - zathura-djvu
+        - zathura-cb
+        # ASINC_IMAGE
+        - chafa # asinc image viewer
+        - ascii-image-converter
+        ### UML
+        - plantuml
+        ### VIRTUALIZATION
+        - docker
+        - qemu
+        - libvirt
+        - virt-manager
+        - virtualbox-ose
+        - virtualbox-ose-dkms
+        ### ANDROID_TOOLS
+        - android-tools
+        - android-file-transfer-linux
+        - android-udev-rules
+        ### AUDIO
+        - pipewire
+        - alsa-pipewire
+        - pulseaudio-utils
+        - libspa-bluetooth
+        ### MULTIMEDIA
+        - easyeffects #Sound effects for systems using PipeWire
+        - cmus #Music player
+        - speech-dispatcher #Speech synthesis
+        ### OTHER
+        - wev # keyboard key code
+
+- clean:
+    - "~"
+    - ~/.config
+    - ~/.local
+
+- link:
+    # Top-level dotfiles
+    ~/.zshrc: home/.zshrc
+    ~/.zshenv: home/.zshenv
+    ~/.zprofile: home/.zprofile
+    ~/.zshrc.d: home/.zshrc.d
+
+    # .config/*
+    ~/.config/alacritty: home/.config/alacritty
+    ~/.config/bottom: home/.config/bottom
+    ~/.config/clipcat: home/.config/clipcat
+    ~/.config/ghostty: home/.config/ghostty
+    ~/.config/niri: home/.config/niri
+    ~/.config/nvim: home/.config/nvim
+    ~/.config/rofi: home/.config/rofi
+    ~/.config/starship.toml: home/.config/starship.toml
+    ~/.config/tinted-theming: home/.config/tinted-theming
+    ~/.config/waybar: home/.config/waybar
+    ~/.config/yazi: home/.config/yazi
+    ~/.config/zellij: home/.config/zellij
+    ~/.config/swaylock: home/.config/swaylock
+    # .local/*
+    ~/.local/bin:
+      glob: true
+      path: home/.local/bin/*
+    ~/.local/share/service: home/.local/share/service
+    ~/.local/share/tinted-theming/tinty/custom-schemes: home/.local/share/tinted-theming/tinty/custom-schemes
+    ~/.local/share/tinted-theming/tinty/custom-templates: home/.local/share/tinted-theming/tinty/custom-templates
+- sudo:
+    - shell:
+        - 
+          command: ln -s root/etc/zzz.d/suspend/10-swaylock /etc/zzz.d/suspend/10-swaylock
+          stderr: true

@@ -1,0 +1,10 @@
+/* base16 Tokyo Night Terminal Dark 256 - alacritty color config
+ * Michaël Ball
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #16161e;
+@define-color foreground #787c99;
+@define-color accent #787c99;

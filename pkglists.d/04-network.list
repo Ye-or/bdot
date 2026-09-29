@@ -1,0 +1,6 @@
+# NETWORK
+chrony
+NetworkManager
+curl
+wget
+proxychains-ng

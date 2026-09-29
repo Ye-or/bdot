@@ -1,0 +1,37 @@
+/**
+ * Base16 Monokai Vivid ROFI Color theme
+ *
+ * Authors
+ *  Scheme: FredHappyface (https://github.com/fredHappyface)
+ *  Template: Tinted Theming (https://github.com/tinted-theming)
+ */
+
+* {
+    red:                         rgba ( 250, 40, 52, 100 % );
+    blue:                        rgba ( 4, 66, 254, 100 % );
+    lightfg:                     rgba ( 241, 241, 241, 100 % );
+    lightbg:                     rgba ( 50, 50, 50, 100 % );
+    foreground:                  rgba ( 223, 223, 223, 100 % );
+    background:                  rgba ( 18, 18, 18, 100 % );
+    background-color:            rgba ( 18, 18, 18, 0 % );
+    separatorcolor:              @foreground;
+    border-color:                @foreground;
+    selected-normal-foreground:  @lightbg;
+    selected-normal-background:  @lightfg;
+    selected-active-foreground:  @background;
+    selected-active-background:  @blue;
+    selected-urgent-foreground:  @background;
+    selected-urgent-background:  @red;
+    normal-foreground:           @foreground;
+    normal-background:           @background;
+    active-foreground:           @blue;
+    active-background:           @background;
+    urgent-foreground:           @red;
+    urgent-background:           @background;
+    alternate-normal-foreground: @foreground;
+    alternate-normal-background: @lightbg;
+    alternate-active-foreground: @blue;
+    alternate-active-background: @lightbg;
+    alternate-urgent-foreground: @red;
+    alternate-urgent-background: @lightbg;
+}

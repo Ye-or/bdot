@@ -1,0 +1,10 @@
+/* base16 Grayscale Light 256 - alacritty color config
+ * Alexandre Gavioli (https://github.com/Alexx2/)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #f7f7f7;
+@define-color foreground #464646;
+@define-color accent #464646;

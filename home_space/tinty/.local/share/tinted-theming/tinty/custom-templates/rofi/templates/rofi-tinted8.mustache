@@ -1,0 +1,38 @@
+/**
+ * Tinted8 {{scheme-name}} ROFI Color theme
+ *
+ * Authors
+ *  Scheme: {{scheme-author}}
+ *  Scheme System: {{ scheme.system }}
+ *  Template: Tinted Theming (https://github.com/tinted-theming)
+ */
+
+* {
+    red:                         rgba ( {{palette.red.normal.rgb.r}}, {{palette.red.normal.rgb.g}}, {{palette.red.normal.rgb.b}}, 100 % );
+    blue:                        rgba ( {{palette.blue.normal.rgb.r}}, {{palette.blue.normal.rgb.g}}, {{palette.blue.normal.rgb.b}}, 100 % );
+    lightfg:                     rgba ( {{ui.global.foreground.light.rgb.r}}, {{ui.global.foreground.light.rgb.g}}, {{ui.global.foreground.light.rgb.b}}, 100 % );
+    lightbg:                     rgba ( {{ui.global.background.light.rgb.r}}, {{ui.global.background.light.rgb.g}}, {{ui.global.background.light.rgb.b}}, 100 % );
+    foreground:                  rgba ( {{ui.global.foreground.normal.rgb.r}}, {{ui.global.foreground.normal.rgb.g}}, {{ui.global.foreground.normal.rgb.b}}, 100 % );
+    background:                  rgba ( {{ui.global.background.normal.rgb.r}}, {{ui.global.background.normal.rgb.g}}, {{ui.global.background.normal.rgb.b}}, 100 % );
+    background-color:            rgba ( {{ui.global.background.normal.rgb.r}}, {{ui.global.background.normal.rgb.g}}, {{ui.global.background.normal.rgb.b}}, 0 % );
+    separatorcolor:              @foreground;
+    border-color:                @foreground;
+    selected-normal-foreground:  @lightbg;
+    selected-normal-background:  @lightfg;
+    selected-active-foreground:  @background;
+    selected-active-background:  @blue;
+    selected-urgent-foreground:  @background;
+    selected-urgent-background:  @red;
+    normal-foreground:           @foreground;
+    normal-background:           @background;
+    active-foreground:           @blue;
+    active-background:           @background;
+    urgent-foreground:           @red;
+    urgent-background:           @background;
+    alternate-normal-foreground: @foreground;
+    alternate-normal-background: @lightbg;
+    alternate-active-foreground: @blue;
+    alternate-active-background: @lightbg;
+    alternate-urgent-foreground: @red;
+    alternate-urgent-background: @lightbg;
+}

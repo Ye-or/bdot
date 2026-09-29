@@ -1,0 +1,16 @@
+# Alacritty
+# ----------------------------------------------------------------------
+alacritty-base16:
+  filename: themes/{{ scheme-system }}-{{ scheme-slug }}.toml
+  supported-systems: [base16]
+
+alacritty-base24:
+  filename: themes/{{ scheme-system }}-{{ scheme-slug }}.toml
+  supported-systems: [base24]
+
+alacritty-tinted8:
+  filename: themes/{{ scheme-system }}-{{ scheme-slug }}.toml
+  supported-systems: [tinted8]
+  supports:
+    tinted8-builder: ~0.2.0
+    tinted8-styling: ~0.2.0

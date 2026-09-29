@@ -1,0 +1,10 @@
+/* base16 Everforest Light (Hard) 256 - alacritty color config
+ * Márcio Sobel (https://github.com/marciosobel)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #fffbef;
+@define-color foreground #5c6a72;
+@define-color accent #5c6a72;

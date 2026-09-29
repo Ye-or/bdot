@@ -1,0 +1,150 @@
+@import "./colors.css";
+
+* {
+	font-family: JetBrainsMono, Symbols Nerd Font;
+	font-weight: bold;
+	font-size: 13px;
+	min-height: 0;
+}
+window#waybar {
+	background-color: @background;
+	transition-property: background-color;
+	transition-duration: .5s;
+	border-radius: 5;
+}
+#backlight,
+#submap,
+#custom-menu,
+#window,
+#custom-cava,
+#custom-cmus,
+#temperature,
+#tray,
+#battery,
+#pulseaudio,
+#language,
+#cpu,
+#memory,
+#clock,
+#network{
+	background-color: @background;
+	padding: 0 10px;
+	margin: 0px;
+/*border: 1px solid @foreground;*/
+/*	border-radius: 6px;*/
+}
+#submap{
+  color: @foreground
+}
+#custom-menu {
+	color: @accent;
+}
+#window {
+	color: @foreground;
+}
+#custom-cava {
+	color: @foreground;
+}
+#custom-cmus {
+	color: @foreground;
+}
+#temperature{
+	color: @foreground;
+}
+#tray {
+	color: @foreground;
+}
+#battery{
+	color: @foreground;
+}
+#backlight,
+#pulseaudio{
+	background: @background;
+	color: @foreground;
+}
+#language {
+	background: @background;
+	color: @accent;
+	border-bottom: solid 2px @accent;
+	border-radius: 0;
+}
+#cpu {
+	color: @foreground;
+}
+#memory {
+	color: @foreground;
+}
+#clock {
+	background: @background;
+	color: @foreground;
+	border-radius: 0 6 6 0;
+	font-size: 14px;
+}
+#network{
+	color: @foreground;
+}
+#workspaces {
+	background-color: @background;
+	border-radius: 6;
+}
+#workspaces button {
+	background-color: @background;
+	color: @foreground;	
+	border-bottom: solid 2px #23252e;
+	border-radius: 0;
+}
+#workspaces button:hover {
+	background-color: @background;
+	color: @foreground;	
+	border-bottom: solid 2px @foreground;
+	border-radius: 0;
+}
+#workspaces button.active {
+	background-color: @background;
+	color: @accent;
+	border-bottom: solid 2px;
+	border-radius: 0;
+}
+#workspaces button.empty {
+	color: @accent;
+	border-bottom: solid 2px #23252e;
+	border-radius: 0;
+}
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+#pulseaudio-slider trough {
+    min-height: 10px;
+    min-width: 100px;
+    border-radius: 5px;
+    background-color: @foreground;
+}
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: @foreground;
+}
+#backlight-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+#backlight-slider trough {
+    min-height: 10px;
+    min-width: 100px;
+    border-radius: 5px;
+    background-color: @foreground;
+}
+#backlight-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: @foreground;
+}

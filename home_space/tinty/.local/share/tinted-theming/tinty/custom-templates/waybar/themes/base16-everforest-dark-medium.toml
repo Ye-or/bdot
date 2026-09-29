@@ -1,0 +1,10 @@
+/* base16 Everforest Dark Medium 256 - alacritty color config
+ * Sainnhe Park (https://github.com/sainnhe)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #2d353b;
+@define-color foreground #859289;
+@define-color accent #859289;

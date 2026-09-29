@@ -1,0 +1,10 @@
+/* base16 Brush Trees Dark 256 - alacritty color config
+ * Abraham White &lt;abelincoln.white@gmail.com&gt;
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #485867;
+@define-color foreground #b0c5c8;
+@define-color accent #b0c5c8;

@@ -1,0 +1,10 @@
+/* base16 Ashes 256 - alacritty color config
+ * Jannik Siebert (https://github.com/janniks)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #1c2023;
+@define-color foreground #c7ccd1;
+@define-color accent #c7ccd1;

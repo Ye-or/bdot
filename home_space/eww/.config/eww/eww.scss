@@ -1,0 +1,72 @@
+/// Power Menu Stuff
+@import "colors";
+
+.powermenu {
+  background: rgba($base00, 0.45);
+}
+
+.menu {
+  background: transparent;
+  min-width: 400px;
+  border: none;
+}
+
+.powermenu label {
+  color: $base05;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.powermenu .PMtitle {
+  color: $base07;
+  font-size: 60px;
+  margin-bottom: 40px;
+}
+
+.powermenu button {
+  background: transparent;
+  color: $base05;
+  margin: 10px;
+  border: 2px solid transparent;
+  border-radius: 16px;
+}
+
+.powermenu button:hover {
+  background: rgba($base01, 0.8);
+  border-color: rgba($base07, 0.1);
+  color: $base07;
+  font-weight: bold;
+}
+
+.wallpaper_popup {
+  background: rgba($base00, 0.65);
+  border: 2px solid rgba($base07, 0.1);
+  border-radius: 14px;
+  min-width: 160px;
+  min-height: 200px;
+}
+
+.text {
+  color: $base07;
+}
+
+.overview .ovrtxt {
+  color: $base05;
+}
+
+.overview .icons {
+  color: $base05;
+}
+
+.minimap button {
+  background: $base00;
+  border-color: $base00;
+}
+
+.minimap button.active {
+  background: rgba($base07, 0.22);
+  border-color: $base0C;
+  color: $base0C;
+}
+
+

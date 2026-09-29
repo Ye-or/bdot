@@ -1,0 +1,94 @@
+# xbps-src
+
+1.Клонируйте репозиторий void-packages (если он еще не загружен):
+
+```sh
+mkdir .local/src
+cd .local/src
+
+git clone https://github.com/void-linux/void-packages.git
+cd void-packages
+```
+
+2.Подготовьте окружение для сборки (bootstrap):
+Эта команда создаст изолированное chroot-окружение и установит в него все необходимые инструменты для компиляции.
+
+```sh
+./xbps-src binary-bootstrap
+```
+
+3.Соберите пакет skim:
+
+```sh
+./xbps-src pkg skim
+```
+
+4.Установите собранный пакет:
+Готовый .xbps-пакет будет помещен в локальную директорию hostdir/binpkgs. Установите его, указав этот путь как репозиторий:
+
+```sh
+sudo xbps-install --repository=hostdir/binpkgs skim
+```
+
+## Как описать шаблон (содержимое файла template)
+
+Создайте или откройте файл srcpkgs/skim/template и вставьте в него следующее содержимое. Этот шаблон основан на актуальной структуре пакетов Rust в Void Linux
+github.com, но обновлен для версии 5.5.0.
+
+```sh
+# Template file for 'skim'
+pkgname=skim
+version=5.5.0
+revision=1
+build_style=cargo
+short_desc="Fuzzy Finder in rust"
+maintainer="Your Name <your@email.com>"
+license="MIT"
+homepage="https://github.com/skim-rs/skim"
+changelog="https://raw.githubusercontent.com/skim-rs/skim/master/CHANGELOG.md"
+distfiles="https://github.com/skim-rs/skim/archive/refs/tags/v${version}.tar.gz"
+checksum="db609ae737127ada94c6147d9b3805a0ab7dd72574075773039c0908e1fd9ab6"
+
+# Историческая проблема: тесты skim могут падать на 32-битных системах из-за нехватки регистров
+if [ "$XBPS_WORDSIZE" = 32 ]; then
+ make_check=no
+fi
+
+post_install() {
+ # 1. Установка sk-tmux.
+ # В upstream install.sh его нет, но в исходниках он есть. Проверяем оба возможных пути.
+ if [ -f "bin/sk-tmux" ]; then
+  vbin bin/sk-tmux
+ elif [ -f "sk-tmux" ]; then
+  vbin sk-tmux
+ fi
+
+ # 2. Установка man-страниц.
+ # Upstream скрипт их игнорирует, мы устанавливаем для полноценной интеграции в ОС.
+ if [ -f "man/man1/sk.1" ]; then
+  vman man/man1/sk.1
+ fi
+ if [ -f "man/man1/sk-tmux.1" ]; then
+  vman man/man1/sk-tmux.1
+ fi
+
+ # 3. Установка скриптов автодополнения (completion).
+ # Используем || true, чтобы сборка не упала, если в версии 5.5.0 разработчики вдруг изменили структуру папок.
+ vcompletion shell/completion.bash bash sk 2>/dev/null || true
+ vcompletion shell/completion.zsh zsh sk 2>/dev/null || true
+ vcompletion shell/completion.fish fish sk 2>/dev/null || true
+
+ # 4. Установка файлов с привязками клавиш (key-bindings).
+ vinstall shell/key-bindings.bash 644 usr/share/skim 2>/dev/null || true
+ vinstall shell/key-bindings.zsh 644 usr/share/skim 2>/dev/null || true
+ vinstall shell/key-bindings.fish 644 usr/share/skim 2>/dev/null || true
+
+ # 5. Установка плагина для Vim.
+ if [ -f "plugin/skim.vim" ]; then
+  vinstall plugin/skim.vim 644 usr/share/vim/vimfiles/plugin
+ fi
+
+ # 6. Установка лицензии (стандартная практика Void)
+ vlicense LICENSE
+}
+```

@@ -1,0 +1,10 @@
+/* base16 SAGA 256 - alacritty color config
+ * https://github.com/SAGAtheme/SAGA
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #05080a;
+@define-color foreground #dce2f7;
+@define-color accent #dce2f7;

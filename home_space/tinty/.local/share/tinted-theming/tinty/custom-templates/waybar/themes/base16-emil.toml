@@ -1,0 +1,10 @@
+/* base16 emil 256 - alacritty color config
+ * limelier
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #efefef;
+@define-color foreground #313145;
+@define-color accent #313145;

@@ -1,0 +1,10 @@
+/* base16 Primer Dark 256 - alacritty color config
+ * Jimmy Lin
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #010409;
+@define-color foreground #b1bac4;
+@define-color accent #b1bac4;

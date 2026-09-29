@@ -1,0 +1,10 @@
+/* base16 Circus 256 - alacritty color config
+ * Stephan Boyer (https://github.com/stepchowfun) and Esther Wang (https://github.com/ewang12)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #191919;
+@define-color foreground #a7a7a7;
+@define-color accent #a7a7a7;

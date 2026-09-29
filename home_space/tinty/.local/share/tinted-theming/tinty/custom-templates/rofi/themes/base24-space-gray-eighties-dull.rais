@@ -1,0 +1,37 @@
+/**
+ * Base16 Space Gray Eighties Dull ROFI Color theme
+ *
+ * Authors
+ *  Scheme: FredHappyface (https://github.com/fredHappyface)
+ *  Template: Tinted Theming (https://github.com/tinted-theming)
+ */
+
+* {
+    red:                         rgba ( 177, 73, 86, 100 % );
+    blue:                        rgba ( 123, 143, 164, 100 % );
+    lightfg:                     rgba ( 178, 184, 194, 100 % );
+    lightbg:                     rgba ( 21, 23, 28, 100 % );
+    foreground:                  rgba ( 154, 159, 166, 100 % );
+    background:                  rgba ( 33, 33, 33, 100 % );
+    background-color:            rgba ( 33, 33, 33, 0 % );
+    separatorcolor:              @foreground;
+    border-color:                @foreground;
+    selected-normal-foreground:  @lightbg;
+    selected-normal-background:  @lightfg;
+    selected-active-foreground:  @background;
+    selected-active-background:  @blue;
+    selected-urgent-foreground:  @background;
+    selected-urgent-background:  @red;
+    normal-foreground:           @foreground;
+    normal-background:           @background;
+    active-foreground:           @blue;
+    active-background:           @background;
+    urgent-foreground:           @red;
+    urgent-background:           @background;
+    alternate-normal-foreground: @foreground;
+    alternate-normal-background: @lightbg;
+    alternate-active-foreground: @blue;
+    alternate-active-background: @lightbg;
+    alternate-urgent-foreground: @red;
+    alternate-urgent-background: @lightbg;
+}

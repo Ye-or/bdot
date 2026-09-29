@@ -1,0 +1,26 @@
+# Template file for 'tinty'
+pkgname=tinty
+version=0.34.1
+revision=1
+build_style=cargo
+hostmakedepends="pkg-config"
+short_desc="Change the theme of your terminal, text editor and anything else with one command"
+maintainer="Your Name <your@email.com>"
+license="GPL-3.0-only"
+homepage="https://github.com/tinted-theming/tinty"
+distfiles="https://github.com/tinted-theming/tinty/archive/refs/tags/v${version}.tar.gz"
+checksum=932c0c6b5c76d6b725ef327fdb71c54976631cc55293c1cd64f30303ace68013
+
+do_install() {
+	vbin target/${RUST_TARGET}/release/tinty
+	vlicense LICENSE
+
+	target/${RUST_TARGET}/release/tinty generate-completion bash > tinty.bash
+	vcompletion tinty.bash bash
+
+	target/${RUST_TARGET}/release/tinty generate-completion zsh > tinty.zsh
+	vcompletion tinty.zsh zsh
+
+	target/${RUST_TARGET}/release/tinty generate-completion fish > tinty.fish
+	vcompletion tinty.fish fish
+}

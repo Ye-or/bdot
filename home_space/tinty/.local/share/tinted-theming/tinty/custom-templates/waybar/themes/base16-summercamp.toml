@@ -1,0 +1,10 @@
+/* base16 summercamp 256 - alacritty color config
+ * zoe firi (zoefiri.github.io)
+ * waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+ * And then in you waybar 'style.css' file, import it with:
+ * @import url("colors.css");
+*/
+
+@define-color background #1c1810;
+@define-color foreground #736e55;
+@define-color accent #736e55;
