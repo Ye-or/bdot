@@ -8,7 +8,7 @@ if [ -z "$SERVICE_NAME" ]; then
 fi
 
 if sv status "$SERVICE_NAME" | grep -q "^run:"; then
-  sudo sv down "$SERVICE_NAME"
+  sv down "$SERVICE_NAME"
 else
-  sudo sv up "$SERVICE_NAME"
+  sv up "$SERVICE_NAME"
 fi

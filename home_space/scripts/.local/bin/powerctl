@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+
+#!/bin/sh
+
+set -eu
+
+PROG=${0##*/}
+
+LOCKER=${LOCKER:-swaylock}
+
+usage() {
+  echo "Usage: $PROG {poweroff|lock|sleep|hibernate}"
+  exit 2
+}
+
+die() {
+  echo "$PROG: $*" >&2
+  exit 1
+}
+
+as_root() {
+  if [ "$(id -u)" -eq 0 ]; then
+    "$@"
+  elif command -v doas >/dev/null 2>&1; then
+    doas "$@"
+  elif command -v sudo >/dev/null 2>&1; then
+    sudo "$@"
+  else
+    die "requires root, doas, or sudo"
+  fi
+}
+
+lock_screen() {
+  command -v sh >/dev/null 2>&1 || die "не найден sh"
+
+  if [ -z "${DISPLAY:-}" ] && [ -z "${WAYLAND_DISPLAY:-}" ]; then
+    die "the graphical session is not defined"
+  fi
+
+  # Запускаем блокировщик в фоне, поскольку он завершается
+  # только после разблокировки экрана.
+  sh -c "$LOCKER" &
+  LOCK_PID=$!
+
+  # Даём блокировщику время установить блокировку.
+  sleep 1
+
+  echo "$LOCK_PID"
+}
+
+poweroff_system() {
+  as_root shutdown -P now
+}
+
+suspend_system() {
+  # zzz по умолчанию использует suspend-to-RAM.
+  as_root zzz
+}
+
+hibernate_system() {
+  # Блокировка перед гибернацией.
+  #lock_screen >/dev/null 2>&1 || true
+
+  # ZZZ — hibernate-to-disk с последующим выключением.
+  # ZZZ
+  echo "$PROG: hibernation is disabled" >&2
+  return 1
+}
+
+[ "$#" -eq 1 ] || usage
+
+case "$1" in
+poweroff | off | shutdown)
+  poweroff_system
+  ;;
+lock)
+  lock_screen >/dev/null
+  ;;
+sleep | suspend)
+  suspend_system
+  ;;
+hibernate | hibernation)
+  hibernate_system
+  ;;
+*)
+  usage
+  ;;
+esac

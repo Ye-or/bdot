@@ -2,9 +2,9 @@
 # ==============================================================================
 # PROJECT: Dotfiles Deployer
 # FILE: deploy_user_space.sh
-# DESCRIPTION: Развертывание пользовательских конфигов в $HOME с помощью GNU Stow.
+# DESCRIPTION: Управление пользовательскими конфигами в $HOME с помощью GNU Stow.
 #              Запускается от имени обычного пользователя (не root).
-# USAGE: ./deploy_user_space.sh [--dry-run]
+# USAGE: ./deploy_user_space.sh [--stow | --delete | --restow] [--dry-run]
 # ==============================================================================
 
 set -Eeuo pipefail
@@ -21,6 +21,7 @@ readonly HOME_DIR="${HOME:?Переменная HOME не задана}"
 
 # Состояние скрипта
 DRY_RUN=0
+STOW_ACTION="--stow" # Действие по умолчанию
 CLEAN_HOME=""
 packages=()
 
@@ -42,8 +43,17 @@ parse_args() {
   while (($# > 0)); do
     case "$1" in
     --dry-run | -n) DRY_RUN=1 ;;
+    --stow | -S) STOW_ACTION="--stow" ;;
+    --delete | -D) STOW_ACTION="--delete" ;;
+    --restow | -R) STOW_ACTION="--restow" ;;
     --help | -h)
-      printf "Использование: %s [--dry-run]\n" "$0"
+      printf "Использование: %s [ДЕЙСТВИЕ] [--dry-run]\n\n" "$0"
+      printf "Действия (может быть указано только одно):\n"
+      printf "  -S, --stow    Установить пакеты (по умолчанию)\n"
+      printf "  -D, --delete  Удалить (деинсталлировать) пакеты\n"
+      printf "  -R, --restow  Переустановить пакеты (удалить и накатать заново)\n\n"
+      printf "Опции:\n"
+      printf "  -n, --dry-run Симуляция выполнения без внесения изменений\n"
       exit 0
       ;;
     *) log_fatal "Неизвестный аргумент: $1" ;;
@@ -82,31 +92,38 @@ collect_pkgs() {
   done
 
   if ((${#packages[@]} == 0)); then
-    log_info "Пакеты для установки не найдены."
+    log_info "Пакеты для обработки не найдены."
     exit 0
   fi
 }
 
 # Выполнение GNU Stow
 run_stow() {
-  local -a stow_args=(
-    --dir="${DOTFILES_DIR}"
-    --target="${HOME_DIR}"
-    --stow
-  )
-
-  if ((DRY_RUN)); then
-    stow_args+=(--simulate --verbose)
-  fi
+  local pkg
 
   # Создаем изолированный HOME для предотвращения конфликтов
   CLEAN_HOME="$(mktemp -d "${TMPDIR:-/tmp}/dotfiles-stow.XXXXXX")"
 
-  (
-    cd /
-    env HOME="${CLEAN_HOME}" \
-      stow "${stow_args[@]}" "${packages[@]}"
-  )
+  # Перебираем каждый пакет отдельно, чтобы Stow читал локальный .stowrc пакета
+  for pkg in "${packages[@]}"; do
+    local -a stow_args=(
+      --dir="${DOTFILES_DIR}"
+      --target="${HOME_DIR}"
+      "${STOW_ACTION}"
+    )
+
+    if ((DRY_RUN)); then
+      stow_args+=(--simulate --verbose)
+    fi
+
+    log_info "Обработка пакета: ${pkg}"
+    (
+      # Заходим прямо в директорию пакета, чтобы Stow подцепил находящийся там .stowrc
+      cd "${DOTFILES_DIR}/${pkg}"
+      env HOME="${CLEAN_HOME}" \
+        stow "${stow_args[@]}" "${pkg}"
+    )
+  done
 }
 
 # Главная точка входа
@@ -118,7 +135,8 @@ main() {
   check_env
   collect_pkgs
 
-  log_title "Развёртывание пользовательских конфигов (GNU Stow)"
+  log_title "Управление пользовательскими конфигами (GNU Stow)"
+  log_info "Выбираемое действие: ${STOW_ACTION}"
   log_info "Каталог пакетов: ${DOTFILES_DIR}"
   log_info "Каталог назначения: ${HOME_DIR}"
   log_info "Пакеты: ${packages[*]}"
@@ -128,7 +146,7 @@ main() {
   if ((DRY_RUN)); then
     log_info "Предварительный просмотр (dry-run) завершён."
   else
-    log_info "Все пакеты успешно обработаны."
+    log_info "Все пакеты успешно обработаны (действие: ${STOW_ACTION})."
   fi
 }
 
