@@ -4,7 +4,7 @@ default-scheme = "base16-just-gray"
 #tinty cycle --ring default
 [[rings]]
 name = "default"
-schemes = ["base16-grayscale-dark", "base16-grayscale-light"]
+schemes = ["base16-grayscale-dark", "base16-berlin", "base16-grayscale-light"]
 
 [[rings]]
 name = "charcoal"

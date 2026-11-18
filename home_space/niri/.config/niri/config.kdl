@@ -5,6 +5,7 @@
 include optional=true "./colors.kdl"
 environment {
     QT_QPA_PLATFORM "wayland"
+    XDG_CURRENT_DESKTOP "niri"
 }
 
 // Input device configuration.
@@ -17,7 +18,7 @@ input {
             // You can set rules, model, layout, variant and options.
             // For more information, see xkeyboard-config(7).
             layout "us,ru"
-            options "grp:alt_shift_toggle,compose:ralt,ctrl:nocaps" // grp:win_space_toggle
+            options "grp:alt_shift_toggle,compose:ralt,ctrl:nocaps,grp:win_space_toggle"
 
             // If this section is empty, niri will fetch xkb settings
             // from org.freedesktop.locale1. You can control these using
@@ -95,15 +96,17 @@ cursor {
 // https://yalter.github.io/niri/Configuration:-Layout
 
 //spawn-at-startup "waybar"
-spawn-sh-at-startup "( awww img ~/wallpaper/anime/11.jpg --outputs eDP-1 & awww img ~/wallpaper/anime/2.jpg --outputs HDMI-A-1 &)" 
 spawn-at-startup "alacritty" "--class" "start-terminal"
 spawn-at-startup "sh" "-c" "sleep 0.1 && alacritty --class services-terminal -e zellij -l $HOME/.config/zellij/layout/services.kdl"
 spawn-at-startup "firefox"
 spawn-at-startup "gammastep" "-O" "4501"
+//spawn-at-startup "/usr/libexec/polkit-gnome-authentication-agent-1"
 spawn-at-startup  "wl-clip-persist" "--clipboard regular"
 //spawn-at-startup "wl-paste" "--type" "text" "--watch" "wl-clip-persist" "store"
 //spawn-at-startup "wl-paste" "--type" "image" "--watch" "wl-clip-persist" "store"
 spawn-at-startup "sh" "-c"  "~/.local/bin/wls-update-turnstile-env-dir.sh ;~/.local/bin/wls-sv-up.sh"
+//spawn-sh-at-startup "( awww img ~/wallpaper/anime/11.jpg --outputs eDP-1 & awww img ~/wallpaper/anime/2.jpg --outputs HDMI-A-1 &)" 
+spawn-at-startup "sh" "-c" "${HOME}/.local/bin/wls-wallpaper-restore.sh" 
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
@@ -239,6 +242,20 @@ window-rule {
   open-floating true
 }
 
+window-rule {
+    match app-id="wallpaper-picker$"
+    open-floating true
+    default-column-width { fixed 950; }
+    default-window-height { fixed 550; }
+}
+
+window-rule {
+    match app-id="power-menu$"
+    open-floating true
+    default-column-width { fixed 200; }
+    default-window-height { fixed 170; }
+}
+
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
@@ -263,15 +280,25 @@ binds {
 
     Mod+D hotkey-overlay-title="Open Menu: rofi" {spawn-sh "rofi -show";}
     //Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Mod+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-    Mod+Ctrl+M hotkey-overlay-title="Toggle bar" { spawn-sh "$HOME/.local/bin/wls-toggle-sv.sh waybar"; }
-    Mod+V hotkey-overlay-title="" {spawn-sh "clipcat-menu insert";}
-    Mod+Shift+S hotkey-overlay-title="" {spawn-sh "bash $HOME/.local/bin/screenshot_area.bash";}
-    Ctrl+Print hotkey-overlay-title=""  {spawn-sh "bash $HOME/.local/bin/screenshot_area_post_processing.bash";}
-    Mod+Ctrl+P hotkey-overlay-title=""  {spawn-sh "rofi -modi power:~/.config/rofi/scripts/rofi_power.sh -show power";}
+    Mod+Alt+L   hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Mod+Ctrl+M  hotkey-overlay-title="Toggle bar" { spawn-sh "$HOME/.local/bin/wls-toggle-sv.sh waybar"; }
+    //Mod+V       hotkey-overlay-title="" {spawn-sh "clipcat-menu insert; wtype -M ctrl -k v -m ctrl";}
+    //Mod+V       hotkey-overlay-title="" {spawn-sh "bash $HOME/.local/bin/wls-clipcat-paste.sh";}
+    Mod+V       hotkey-overlay-title="" {
+      spawn-sh "bash $HOME/.local/bin/wls-clipcat-paste.sh";
+    }
+    Mod+Shift+S hotkey-overlay-title="" {spawn-sh "bash $HOME/.local/bin/wls-screenshot_area.sh";}
+    Ctrl+Print  hotkey-overlay-title="" {spawn-sh "bash $HOME/.local/bin/wls-screenshot_area_post_processing.sh";}
+    Mod+Ctrl+P  hotkey-overlay-title="" {spawn-sh "rofi -modi power:~/.config/rofi/scripts/rofi_power.sh -show power";}
     //POWER_SCREEN_LOCK 
-    Mod+P hotkey-overlay-title="Halt the system" { spawn-sh "eww active-windows | grep powermenu  && eww close powermenu  || eww open powermenu"; }
-
+    //Mod+P hotkey-overlay-title="Halt the system" { spawn-sh "eww active-windows | grep powermenu  && eww close powermenu  || eww open powermenu"; }
+    //Mod+P hotkey-overlay-title="Halt the system" { spawn-sh "wls-eww-power.sh"; }
+    Mod+P       hotkey-overlay-title="Halt the system" { 
+      spawn "bash" "-c" "$HOME/.local/bin/wls-power-menu.sh";
+    }
+    Mod+Shift+W hotkey-overlay-title="Wallpaper picker" {
+        spawn "ghostty" "--class=ghostty.wallpaper-picker" "-e" "bash" "-c" "$HOME/.local/bin/wls-wallpaper-picker.sh";
+    }
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
@@ -436,9 +463,9 @@ binds {
     // Mod+R { switch-preset-column-width-back; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
-    Mod+F { maximize-column; }
-    Mod+Shift+F { fullscreen-window; }
-    Mod+M { maximize-window-to-edges; }
+    Mod+M { maximize-column; }
+    Mod+Shift+M { fullscreen-window; }
+    Mod+Alt+M { maximize-window-to-edges; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
@@ -458,8 +485,8 @@ binds {
     Mod+Shift+Equal { set-window-height "+5%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    // Mod+V       { toggle-window-floating; }
-    // Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+F       { toggle-window-floating; }
+    Mod+Shift+F { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,

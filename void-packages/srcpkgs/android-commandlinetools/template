@@ -1,0 +1,40 @@
+# Template file for 'android-commandlinetools'
+pkgname=android-commandlinetools
+version=15859902
+revision=1
+archs="x86_64"
+short_desc="Android Command Line Tools"
+maintainer="Your Name <you@example.com>"
+license="Apache-2.0 AND custom"
+homepage="https://developer.android.com/studio"
+depends="java-environment"
+
+distfiles="https://dl.google.com/android/repository/commandlinetools-linux-${version}_latest.zip"
+checksum=4e4c464f145a7512b57d088ac6c278c03c9eea610886b35a5e0804e74eedf583
+
+# Создаем пустую рабочую директорию, куда распакуется архив
+create_wrksrc=yes
+# Отключаем стриппинг и проверку rdeps, так как это prebuilt бинарники
+nostrip=yes
+noverifyrdeps=yes
+
+do_install() {
+    # Создаем целевую директорию в /opt
+    vmkdir opt/android-commandlinetools
+
+    # Копируем содержимое cmdline-tools в /opt
+    # (архив распаковывается в ${wrksrc}/cmdline-tools)
+    cp -a ${wrksrc}/cmdline-tools/* ${DESTDIR}/opt/android-commandlinetools/
+
+    # Исправляем права доступа (делаем исполняемыми и читаемыми)
+    chmod -R u+w,a+rX,go-w ${DESTDIR}/opt/android-commandlinetools
+
+    # Создаем симлинки для основных утилит в /usr/bin для удобства
+    vmkdir usr/bin
+    for tool in sdkmanager avdmanager d8; do
+        ln -sf /opt/android-commandlinetools/bin/${tool} ${DESTDIR}/usr/bin/${tool}
+    done
+
+    # Устанавливаем лицензионное соглашение
+    vlicense ${wrksrc}/cmdline-tools/NOTICE.txt
+}

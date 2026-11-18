@@ -44,3 +44,4 @@
 
 # Set `theme` to "tinted-theming":
 theme = "tinted-theming"
+confirm-close-surface = false

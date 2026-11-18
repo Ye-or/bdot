@@ -1,0 +1,109 @@
+;; power buttons
+(defwidget lock [] 
+	(box
+    :class "genwin"
+    :vexpand false
+    :hexpand false
+		(button
+      :class "btn_lock"
+      :onclick "eww  close lock sleep reboot poweroff; powerctl lock" 
+      "󰌾"
+    )
+  )
+)
+
+(defwidget sleep [] 
+	(box
+    :class "genwin"
+    :vexpand false
+    :hexpand false 
+		(button
+      :class "btn_sleep"
+      :onclick "eww  close lock sleep reboot poweroff; powerctl suspend"
+      "󰤄" 
+    )
+  )
+)
+
+(defwidget reboot [] 
+	(box
+    :class "genwin"
+    :vexpand false
+    :hexpand false 
+		(button
+      :class "btn_reboot"
+      :onclick "powerctl reboot" 
+      "󰑓" 
+    )
+  )
+)
+
+(defwidget poweroff [] 
+	(box
+    :class "genwin"
+    :vexpand false
+    :hexpand false 
+		(button
+      :class "btn_poweroff"
+      :onclick "powerctl poweroff" 
+      "󰐥" 
+    )
+  )
+)
+
+;; lock window
+(defwindow lock
+  :stacking "fg"
+  :focusable false 
+  :screen 1 
+  :geometry (geometry
+    :x 1445
+    :y 150
+    :width 155
+    :height 155
+  )
+  (lock)
+)
+
+;; sleep window
+(defwindow sleep
+  :stacking "fg"
+  :focusable false
+  :screen 1 
+  :geometry (geometry
+    :x 1615
+    :y 150
+    :width 155
+    :height 155
+  )
+  (sleep)
+)
+
+;; reboot window
+(defwindow reboot
+  :stacking "fg"
+  :focusable false
+  :screen 1 
+  :geometry (geometry
+    :x 1445
+    :y 320
+    :width 155
+    :height 155
+  )
+  (reboot)
+)
+
+;; poweroff window
+(defwindow poweroff
+  :stacking "fg"
+  :focusable false
+  :screen 1 
+  :geometry (geometry
+    :x 1615
+    :y 320
+    :width 155
+    :height 155
+  )
+  (poweroff)
+)
+

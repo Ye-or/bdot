@@ -21,3 +21,6 @@ image_quality = 50
 
 [opener]
 edit = [{ run = '${EDITOR:-vim} "$@"', block = true, desc = "Edit" }]
+
+[plugin]
+prepend_previewers = [{ mime = "image/*", run = "img-chafa" }]

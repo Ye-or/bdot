@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec chpst -e "$TURNSTILE_ENV_DIR" swayidle -w -C "${XDG_CONFIG_HOME:-$HOME/.config}/swayidle/config" 2>&1

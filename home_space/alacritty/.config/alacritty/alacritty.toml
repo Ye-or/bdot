@@ -4,6 +4,9 @@ import = ["./colors.toml"]
 [font]
 size = 12.0
 
+[selection]
+save_to_clipboard = true
+
 [font.normal]
 family = "JetBrainsMono Nerd Font"
 style = "Regular"

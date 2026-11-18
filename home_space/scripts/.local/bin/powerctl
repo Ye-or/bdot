@@ -9,7 +9,7 @@ PROG=${0##*/}
 LOCKER=${LOCKER:-swaylock}
 
 usage() {
-  echo "Usage: $PROG {poweroff|lock|sleep|hibernate}"
+  echo "Usage: $PROG {poweroff|reboot|lock|suspend|hibernate}"
   exit 2
 }
 
@@ -49,12 +49,19 @@ lock_screen() {
 }
 
 poweroff_system() {
-  as_root shutdown -P now
+  #as_root shutdown -P now
+  loginctl poweroff
+}
+
+reboot_system() {
+  #as_root shutdown -r now
+  loginctl reboot
 }
 
 suspend_system() {
   # zzz по умолчанию использует suspend-to-RAM.
-  as_root zzz
+  #as_root zzz
+  loginctl suspend
 }
 
 hibernate_system() {
@@ -72,6 +79,9 @@ hibernate_system() {
 case "$1" in
 poweroff | off | shutdown)
   poweroff_system
+  ;;
+reboot)
+  reboot_system
   ;;
 lock)
   lock_screen >/dev/null

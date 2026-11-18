@@ -1,0 +1,11 @@
+run_eww() {
+  if ! check_active_windows EWW_WIN; then
+    # Открываем каждое окно по отдельности с жесткой привязкой числового индекса экрана
+    for win in "${EWW_WIN[@]}"; do
+      "${EWW}" "${EWW_CFG[@]}" --screen "${ACTIVE_MONITOR_INDEX}" open "${win}"
+    done
+  else
+    # Закрывать по-прежнему можно одной командой close без указания экранов
+    "${EWW}" "${EWW_CFG[@]}" "${EWW_CLOSE}" "${EWW_WIN[@]}"
+  fi
+}

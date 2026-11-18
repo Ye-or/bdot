@@ -1,0 +1,67 @@
+/// Power Menu Stuff
+@import "../colors";
+
+// Общие системные сбросы для GTK-кнопок в Eww
+button {
+  background-image: none;
+  background-color: transparent;
+  outline-style: none;
+  border: none;
+  box-shadow: none;
+}
+
+// Стили для контейнера каждого из 4-х окон (класс "genwin")
+.genwin {
+  background-color: $base00;
+  border: 2px solid rgba($base07, 0.1);
+  border-radius: 16px; // Скругление углов плитки
+} 
+  // Растягиваем внутреннюю кнопку на все доступное пространство виджета (155x155)
+.genwin button {
+  font-size: 45px; // Размер для будущих иконок/текста внутри кнопок
+  color: $base05;
+  transition: all 200ms ease-in-out; // Плавный переход при наведении
+}  
+  // Эффект при наведении на любую кнопку
+.genwin button:hover {
+  color: $base07; // Все кнопки загораются одним цветом
+  background-color: rgba($base01, 0.7);
+  border-radius: 14px;
+  border: 2px solid rgba($base07, 0.3); // Рамка цвета акцента
+  box-shadow: 0 0 12px rgba($base07, 0.15);
+}
+
+
+
+// Индивидуальные стили и цвета для каждой кнопки при наведении
+//.btn_logout {
+//  &:hover {
+//    color: $logout-color;
+//    border: 2px solid rgba($logout-color, 0.3);
+//    box-shadow: 0 0 10px rgba($logout-color, 0.2);
+//  }
+//}
+//
+//.btn_sleep {
+//  &:hover {
+//    color: $sleep-color;
+//    border: 2px solid rgba($sleep-color, 0.3);
+//    box-shadow: 0 0 10px rgba($sleep-color, 0.2);
+//  }
+//}
+//
+//.btn_reboot {
+//  &:hover {
+//    color: $reboot-color;
+//    border: 2px solid rgba($reboot-color, 0.3);
+//    box-shadow: 0 0 10px rgba($reboot-color, 0.2);
+//  }
+//}
+//
+//.btn_poweroff {
+//  &:hover {
+//    color: $poweroff-color;
+//    border: 2px solid rgba($poweroff-color, 0.4);
+//    box-shadow: 0 0 15px rgba($poweroff-color, 0.3);
+//  }
+//}
